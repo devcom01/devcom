@@ -1,0 +1,74 @@
+.landing-page {
+    width: 87vw;
+    height: 600px;
+    top: 170px;
+    margin-left: 7vw;
+    margin-right: 7vw;
+    border-radius: 20px;
+    position: relative;
+    background: linear-gradient(to left, #402023, #3f2f2a), url("https://www.transparenttextures.com/patterns/triangles.png");
+    background-blend-mode: multiply;
+    display: flex;
+
+    .section {
+        background: transparent;
+        width: 100%;
+
+    }
+
+    .first-section {
+        .containers {
+            background: transparent;
+            width: 50%;
+        }
+
+        img {
+            background: transparent;
+            width: 45%;
+            position: absolute;
+            right: 0;
+            transform: translate(0, -50%);
+            top: 50%;
+        }
+
+        .text-container {
+            background: transparent;
+            position: absolute;
+            transform: translate(0, -50%);
+            left: 5%;
+            top: 60%;
+            font-family: 'IBM Plex Sans', sans-serif;
+            width: 38%;
+
+            div {
+                background: transparent;
+                color: #fff;
+                letter-spacing: 2px;
+                font-size: 42px;
+            }
+
+            p {
+                background: transparent;
+                color: #fff;
+                font-size: 25px;
+                margin-top: 40px;
+                line-height: 1.6;
+                font-weight: 300;
+            }
+
+            button {
+                background: transparent;
+                border: 1px solid white;
+                color: white;
+                font-size: 23px;
+                font-family: 'IBM Plex Sans', sans-serif;
+                padding: 5px 20px;
+                border-radius: 4px;
+                margin-top: 25px;
+            }
+        }
+    }
+
+
+    
+}
