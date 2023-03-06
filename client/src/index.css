@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
 
-* {
-  /* background-color: #202123;
-  background-image: url("https://uploads-ssl.webflow.com/62e3ee10882dc50bcae8d07a/631a5d4631d4c55a475f3e34_noise-50.png");
-  margin: 0;
-  background-size: 200px;
-  background-color: #16171b; */
-}
 .aa {
   background: url("./assets/imgs/bg.jpg") ;
   background-repeat: no-repeat;
@@ -141,7 +134,7 @@ download:hover{
 
 
 
-@mixin backlight($x, $y, $spread, $size, $colorA, $colorB, $duration) {
+/* @mixin backlight($x, $y, $spread, $size, $colorA, $colorB, $duration) {
   &:after {
     position: absolute;
     content: "";
@@ -167,7 +160,7 @@ download:hover{
       100%{background-position:0% 50%}
     }
   }
-}
+} */
 
 .div{
   position: relative;
