@@ -1,11 +1,434 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
 
 * {
-  background-color: #202123;
+  /* background-color: #202123;
   background-image: url("https://uploads-ssl.webflow.com/62e3ee10882dc50bcae8d07a/631a5d4631d4c55a475f3e34_noise-50.png");
   margin: 0;
   background-size: 200px;
-  background-color: #16171b;
+  background-color: #16171b; */
+}
+.aa {
+  background: url("./assets/imgs/bg.jpg") ;
+  background-repeat: no-repeat;
+  
+  height: 40vh;
+ /* backdrop-filter: brightness(100%); */
+ /* background-image: linear-gradient(90deg,rgba(45,45,58,.9) 15%,rgba(45,45,58,.7) 50%,rgba(43,43,53,.7) 100%); */
+display: flex;
+opacity: 0.5;
+transform: scale(1);
+justify-items: start;
+
+background-size: cover;
+background-position: center;
+
+width:100%;
+}
+.img {
+position: absolute;
+  width:200px;
+  height: 200px;
+  
+  /* margin-top: 103px; */
+  border-radius: 0;
+    box-shadow: none;
+  right: 30px;
+  /* bottom: 0; */
+  bottom: 436px;
+}
+.sidecv{
+margin-top: -148px; 
+}
+.p-discover{
+  position: absolute;
+    bottom: 587px;
+    left: -93px;
+}
+.p-build{
+  position: absolute;
+  bottom: 520px;
+  left: -68px;
+}
+.form {
+  background: linear-gradient(159deg,rgba(37,37,50,.98) 0,rgba(35,35,45,.98) 100%);
+}
+.input{
+  background:#20202a;
+}
+.divavatar{
+  padding: 34px;
+  background: linear-gradient(159deg,rgba(37,37,50,.98) 0,rgba(35,35,45,.98) 100%);
+}
+.side{
+  background:#20202a;
+}
+.section{background :#191923}
+.avatar{
+  margin:0px 24px; 
+}
+.contact{
+  margin: -36px 256px;
+    width: 82.6%;
+}
+.header{
+  margin: -36px 256px;
+    width: 82.6%;
+}
+.button{
+  background-color: #ffc107;
+    color: #20202a;
+    border-radius: 54;
+    padding: 10px 168px;
+    margin: 19px -191px;
+    border-color:  #ffc107;
+}
+button:hover{
+  background-color: #daa711;
+}
+.buttonex{
+  background-color: #ffc107;
+    color: #20202a;
+    border-radius: 54;
+    padding: 10px 168px;
+    margin: 19px 34px;
+    border-color:  #ffc107;
+}
+buttonex:hover{
+  background-color: #daa711;
+}
+.buttonep{
+  background-color: #ffc107;
+    color: #20202a;
+    border-radius: 54;
+    padding: 10px 168px;
+    margin: 19px 34px;
+    border-color:  #ffc107;
+}
+buttonep:hover{
+  background-color: #daa711;
+}
+.buttone{
+  background-color: #ffc107;
+    color: #20202a;
+    border-radius: 54;
+    padding: 10px 168px;
+    margin: 19px 0px;
+    border-color:  #ffc107;
+}
+buttone:hover{
+  background-color: #daa711;
 }
 
+.download{
+  background-color: #ffc107;
+    color: #20202a;
+    border-radius: 54;
+    padding: 10px 168px;
+    margin: -52px 180px;
+    border-color:  #ffc107;
+}
+download:hover{
+  background-color: #daa711;
+}
+.bar{
+  display: block;
+  box-sizing: border-box;
+  height: 300px;
+  width: 500px;
+  margin: 95px 112px;
+}
+
+
+
+
+@mixin backlight($x, $y, $spread, $size, $colorA, $colorB, $duration) {
+  &:after {
+    position: absolute;
+    content: "";
+    top: $y;
+    left: $x;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale($size);
+    -webkit-filter: blur($spread);
+    -moz-filter: blur($spread);
+    -ms-filter: blur($spread);
+    filter: blur($spread);
+    background: linear-gradient(270deg, $colorA, $colorB);
+    background-size: 200% 200%;
+    animation: animateGlow $duration ease infinite;
+    
+    @keyframes animateGlow {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+  }
+}
+
+.div{
+  position: relative;
+  width: 30vw;
+  height: 30vw;
+  line-height: 30vw;
+  text-align: center;
+  color: #252B37;
+  background-color: #151823;
+  animation: textColor 10s ease infinite;
+  @include backlight(0, 5vw, 5vw, 0.75, #0fffc1, #7e0fff, 10s)}
+
+
+
+
+
+
+
+
+
+
 /* background-image: url("https://www.transparenttextures.com/patterns/triangles.png"); */
+
+
+
+
+
+
+
+/* 
+
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+
+* {
+  /* background-color: #202123;
+  background-image: url("https://uploads-ssl.webflow.com/62e3ee10882dc50bcae8d07a/631a5d4631d4c55a475f3e34_noise-50.png");
+  margin: 0;
+  background-size: 200px;
+  background-color: #16171b; */
+/* } */
+
+/* .sectionh{
+  margin: 0px 256px;
+  position: fixed;
+  background: url(/src/assets/imgs/bg.jpg);
+  background-repeat: no-repeat;
+ 
+  height: 40vh;
+  /* backdrop-filter: brightness(100%); */
+  /* background-image: linear-gradient(90deg,rgba(45,45,58,.9) 15%,rgba(45,45,58,.7) 50%,rgba(43,43,53,.7) 100%); */
+  /* display: flex;
+  opacity: 0.5;
+  transform: scale(1);
+  justify-items: start;
+  margin: 0px 256px;
+
+  width: 83%;
+  background-size: cover;
+  background-position: center;
+} */
+/* .img {
+position: absolute;
+  width:200px;
+  height: 200px; */
+  
+  /* margin-top: 103px; */
+  /* border-radius: 0;
+    box-shadow: none;
+  right: 30px; */
+  /* bottom: 0; */
+  /* bottom: 436px;
+} */
+/* .p-discover{
+  position: absolute;
+    bottom: 587px;
+    left: -93px;
+}
+.p-build{
+  position: absolute;
+  bottom: 520px;
+  left: -68px;
+} */
+/* .aa{
+  margin:0px 0px
+}
+.divavatar{
+  padding: 34px;
+}
+.avatar{
+  margin:0px 24px; 
+}
+.contact{
+  position: fixed;
+    margin: 301px 256px;
+    width: 100%;
+} */
+
+.clearfix{
+	clear: both;
+}
+.resume-box{
+	width: 800px;
+	height: 1000px;
+	margin: 62px auto;
+	background-color: white;
+}
+.box-outer{
+	padding:30px;
+}
+.box-1{
+	background-color: #26252d;
+	width: 35%;
+	float: left;
+	height: 1000px;
+}
+
+.box-2{
+	width: 60%;
+	float: left;
+	padding: 20px;
+}
+.profile{
+	width: 100%;
+}
+.content{
+	padding: 20px;
+}
+h1{
+	color: #ceced1;
+    font-family: system-ui;
+    font-weight: 300;
+    text-transform: uppercase;
+
+}
+p{
+	color: #ceced1;
+    font-family: system-ui;
+    font-weight: 300;
+    font-size: 14px;
+   
+}
+
+#progress {
+    background: #333;
+    border-radius: 13px;
+    height: 8px;
+    width: 100%;
+    padding: 3px;
+}
+
+#progress:after {
+    content: '';
+    display: block;
+    background: orange;
+    width: 50%;
+    height: 100%;
+    border-radius: 9px;
+}
+#progress1 {
+    background: #333;
+    border-radius: 13px;
+    height: 8px;
+    width: 100%;
+    padding: 3px;
+}
+
+#progress1:after {
+    content: '';
+    display: block;
+    background: orange;
+    width: 40%;
+    height: 100%;
+    border-radius: 9px;
+}
+#progress2 {
+    background: #333;
+    border-radius: 13px;
+    height: 8px;
+    width: 100%;
+    padding: 3px;
+}
+
+#progress2:after {
+    content: '';
+    display: block;
+    background: orange;
+    width: 80%;
+    height: 100%;
+    border-radius: 9px;
+}
+
+#progress3 {
+    background: #333;
+    border-radius: 13px;
+    height: 8px;
+    width: 100%;
+    padding: 3px;
+}
+
+#progress3:after {
+    content: '';
+    display: block;
+    background: orange;
+    width: 90%;
+    height: 100%;
+    border-radius: 9px;
+}
+.intro{text-align: center;}
+.intro h1{
+	font-size: 40px;
+	font-weight: bold;
+	color: #26252d;
+
+}
+.hr{
+	height: 15px;
+    border: none;
+    background-color: yellow;
+    margin: -45px 20px;
+}
+
+.intro-p{
+	color: #7d7d7d;
+  font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    margin-top: 13%!important;
+    font-weight: 400;
+}
+.intro p{
+	color: #7d7d7d;
+    font-family: system-ui;
+    font-weight: 300;
+    font-size: 15px;
+    margin-top: -5px;
+    font-weight: 400;
+}
+.content-2{
+	padding-top: 40px;
+}
+.head{
+	color: #26252d;
+    font-family: system-ui;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin:0px;
+}
+.para-1{
+	font-size: 16px;
+    text-transform: uppercase;
+    color: #26252d;
+    font-weight: 400;
+    margin: 5px 0px;
+    margin-top: 10px;
+}
+.para-2{
+	font-size: 14px;
+	text-transform: capitalize;
+    color: #7d7d7d;
+    font-weight: 400;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}

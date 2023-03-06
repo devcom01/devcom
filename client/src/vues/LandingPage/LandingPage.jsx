@@ -6,6 +6,7 @@ export default function LandingPage() {
     return (
         <>
             <Layout>
+
                 <div className='landing-page'>
                     {/* first-section */}
                     <div className="first-section">
@@ -16,7 +17,7 @@ export default function LandingPage() {
                                     Sharpen your coding skills
 
                                 </div>
-                                <p>
+                                <p className="underline">
                                     Challenge yourself on small coding exercises called "kata".
                                     Each kata is crafted by the community to help you strengthen different coding skills.
                                     Master your current language of choice,
