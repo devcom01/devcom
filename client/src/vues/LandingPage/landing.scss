@@ -1,74 +1,77 @@
-.landing-page {
-    width: 87vw;
-    height: 600px;
-    top: 170px;
-    margin-left: 7vw;
-    margin-right: 7vw;
-    border-radius: 20px;
-    position: relative;
-    background: linear-gradient(to left, #402023, #3f2f2a), url("https://www.transparenttextures.com/patterns/triangles.png");
-    background-blend-mode: multiply;
-    display: flex;
-
-    .section {
-        background: transparent;
-        width: 100%;
-
-    }
-
-    .first-section {
-        .containers {
-            background: transparent;
-            width: 50%;
-        }
-
-        img {
-            background: transparent;
-            width: 45%;
-            position: absolute;
-            right: 0;
-            transform: translate(0, -50%);
-            top: 50%;
-        }
-
-        .text-container {
-            background: transparent;
-            position: absolute;
-            transform: translate(0, -50%);
-            left: 5%;
-            top: 60%;
-            font-family: 'IBM Plex Sans', sans-serif;
-            width: 38%;
-
-            div {
-                background: transparent;
-                color: #fff;
-                letter-spacing: 2px;
-                font-size: 42px;
-            }
-
-            p {
-                background: transparent;
-                color: #fff;
-                font-size: 25px;
-                margin-top: 40px;
-                line-height: 1.6;
-                font-weight: 300;
-            }
-
-            button {
-                background: transparent;
-                border: 1px solid white;
-                color: white;
-                font-size: 23px;
-                font-family: 'IBM Plex Sans', sans-serif;
-                padding: 5px 20px;
-                border-radius: 4px;
-                margin-top: 25px;
-            }
-        }
-    }
-
-
-    
+   body {
+    background-color: #111119;
+     margin: 0;
+ 
+    font-family: 'IBM Plex Sans', sans-serif;
+    width: 100%;
+    height: 100vh;
+   }
+   .landingpage__all4 {
+    padding: 0px;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: #121212;
+    background: url("../../assets/imgs/hero.jpg") no-repeat 50% 50%;
+    background-size: cover;
+   
+img {
+    width: 100%;
 }
+.header {
+    position: absolute;
+    top:46%;
+    left: 32%;
+    transform: translate(50%,50%);
+    z-index: 1;
+}
+.loading {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: #0a0a0a;
+    z-index: 2;
+}
+.ring {
+    margin: 0;
+    padding: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    z-index: 2;
+    width: 40%;
+    opacity: 0.7;
+}
+#motto {
+    margin: 0;
+    padding: 0;
+    top: 50%;
+    left: 62%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    z-index: 2;
+    width: 40%;
+    opacity: 0.7;
+    font-size: 12px;
+    color: aliceblue;
+}
+
+
+.ringOne img {
+   animation: rotateRing 2s linear infinite;
+
+}
+.ringOne img {
+    animation: rotateRing 8s linear infinite;
+     
+ }
+ @keyframes rotateRing {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+ }
+ }
