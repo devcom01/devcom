@@ -58,7 +58,7 @@ tl.from(".ringOne",4,{
     <h2 id="motto">You've Got Questions. We've Got Developers</h2>
  
 </div>
-
+<NavBar which="main"/>
 
 
 </div>
