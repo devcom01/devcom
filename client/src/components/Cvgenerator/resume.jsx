@@ -11,8 +11,7 @@ import {
   list,
 } from "firebase/storage";
 import { storage } from "../../Firebase";
-// import {collection, addDoc, setDoc, doc, getDoc } from "firebase/firestore";
-//const app = initializeApp(firebaseConfig);
+
 
 const resume = (props) => {
   const [pdf, setpdf] = useState("");
@@ -30,13 +29,13 @@ const resume = (props) => {
       unit: "px",
     });
 
-    // Adding the fonts.
+  
     docpdf.setFont("Inter-Regular", "normal");
 
     docpdf.html(ref2.current, {
       async callback(docpdf) {
         var x = await docpdf.save("document");
-        // your jspdf generator
+    
         const pdfData = x.output("blob");
         const pdfBlob = new Blob([pdfData], { type: "application/pdf" });
         setDocState(pdfBlob);
@@ -58,7 +57,7 @@ const resume = (props) => {
   const savecv = async (e) => {
     const washingtonRef = doc(db, "users", "gv04GaM5lZgHlYTe2jZZ4eMqORj2");
 
-    // Set the "capital" field of the city 'DC'
+  
     await updateDoc(washingtonRef, {
       cv:pdf,
     });
@@ -77,16 +76,7 @@ const resume = (props) => {
                     class="rounded-full w-32 border-2 border-gray-300"
                   />
                 </div>
-                {/* {contacts[0] && (
-          <h1 class="text-gray-400 uppercase tracking-widest text-lg font-bold">
-          
-            {contacts[0].Firstname}{contacts[0].Lastname}
-          </h1>)} */}
-                {/* {contacts[0] && ( */}
-                {/* // <h1 class="text-gray-400 uppercase tracking-widest text-lg font-bold">
-          
-          //   {contacts[0].JobTitle}
-          // </h1>)} */}
+               
 
                 <h1 class="text-gray-400 uppercase tracking-widest text-lg font-bold">
                   Contact
@@ -238,13 +228,7 @@ const resume = (props) => {
                 </h1>
 
                 <hr class="w-1/6 mb-5" />
-                {/* {educations && (
-            <h1 class="text-gray-400 text-sm">
-              {educations.map((ed) => (
-                <h1>{ed.university} </h1>
-              ))}
-            </h1>
-          )} */}
+              
 
                 {educations && (
                   <div>
@@ -326,11 +310,7 @@ const resume = (props) => {
               </div>
             </div>
           </div>
-          {/* <ReactPrint trigger={()=>
-  <button class="download" >
- Download
-</button>
-} content={()=>ref.current}/> */}
+
 
           <button class="download" onClick={handleGeneratePdf}>
             Download
