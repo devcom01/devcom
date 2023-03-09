@@ -13,7 +13,7 @@ const [Phone,setPhone]=useState("");
 //  const [PostalCode,setPostalCode]=useState("");
 //  const [City,setCity]=useState("");
  
- 
+
  
  
 
@@ -259,7 +259,8 @@ const [Phone,setPhone]=useState("");
                   />
             
                    <button class=" button text-gray-800 font-semibold py-2 px-4 border  rounded shadow"
-                        onClick={(e) => {
+                        onClick={
+                          (e) => {
                           e.preventDefault();
                           setcontacts((contacts) => [
                             ...contacts,
@@ -281,7 +282,7 @@ const [Phone,setPhone]=useState("");
                           setGithub("");
                           setPhone("");
                           setAdress("")
-                        }}
+                        } }
                       >
                        SEND 
                       </button>

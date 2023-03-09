@@ -2,12 +2,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-* {
-  /* background-color: #657aa5;
-  background-image: url("https://uploads-ssl.webflow.com/62e3ee10882dc50bcae8d07a/631a5d4631d4c55a475f3e34_noise-50.png");
-  margin: 0;
-  background-size: 200px;
-  background-color: #7682b3; */
-}
+
 
 /* background-image: url("https://www.transparenttextures.com/patterns/triangles.png"); */

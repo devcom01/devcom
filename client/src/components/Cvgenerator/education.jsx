@@ -8,6 +8,7 @@ const education = ({ seteducations }) => {
   const [city,setcity]=useState("");
   const [dates,setdates]=useState("")
   const [datef,setdatef]=useState("")
+ 
   return (
     <div>
       <section class=" section  dark:bg-gray-900">

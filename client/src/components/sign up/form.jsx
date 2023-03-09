@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { collection, addDoc } from "firebase/firestore";
-
+import { collection, addDoc, setDoc, doc, getDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 import { db } from "../../Firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+
+
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  updateProfile,
+} from "firebase/auth";
 import { auth, provider } from "../../Firebase";
 import { signInWithPopup } from "firebase/auth";
+import { initializeApp } from "firebase/app";
+import { firebaseConfig } from "../../Firebase";
 import {
   ref,
   uploadBytes,
@@ -14,16 +22,33 @@ import {
 } from "firebase/storage";
 import { storage } from "../../Firebase";
 import signup from "../../vues/sign in/signin";
+import { MyContext } from "../Contextt/Context";
+import { usePrevious } from "@material-tailwind/react";
 
 const imagesListRef = ref(storage, "images/");
 const form = () => {
-    const [pseudo,setPseudo]=useState("")
+  const [pseudo, setPseudo] = useState("");
+  const [role, setrole] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [value, setValue] = useState("");
   const [imageUpload, setImageUpload] = useState(null);
   const [imageUrls, setImageUrls] = useState([]);
+  const [cv,setcv]=useState(null)
+  const app = initializeApp(firebaseConfig);
+
+  const auth = getAuth();
+  // const data= updateProfile(auth.currentUser, {
+  //   displayName: pseudo, photoURL:imageUrls
+  // }).then(() => {
+  //   console.log("updated", data)
+  // }).catch((error) => {
+
+  // });
+  const user = auth.currentUser;
+  console.log(user);
   // const [user,setUser]=useState('')
+  // const [set, setSet] = useState(id, email, pseudo, role, imageUrls);
   const handleClick = () => {
     signInWithPopup(auth, provider).then((data) => {
       setValue(data.user.email);
@@ -54,37 +79,40 @@ const form = () => {
       });
     });
   }, []);
-  //     useEffect(() => {
-  //   const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-  //     setUser(currentUser);
-  //     console.log('User', currentUser)
-  //   });
-  //   return () => {
-  //     unsubscribe();
-  //   };
-  // }, []);
+
   useEffect(() => {
     setValue(localStorage.getItem("email"));
   });
   const signUp = (e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password,pseudo).then(
-      async (result) => {
-        console.log(result);
-        try {
-          const docRef = await addDoc(collection(db, "users"), {
-            email,
-            password,
-            pseudo,
-            userId: `${result.user.uid}`,
-          });
-          alert("wellcome new user create successfully");
-          console.log("document written with ID:", docRef.id);
-        } catch (e) {
-          console.log("error adding document:", e);
-        }
-      }
-    );
+
+    createUserWithEmailAndPassword(
+      auth,
+      email,
+      password,
+      pseudo,
+      role,
+      imageUrls,
+      cv
+    
+    ).then(async (result) => {
+      console.log("result", result);
+      const usersRef = collection(db, "users");
+      const docRef = await setDoc(doc(usersRef, result.user.uid), {
+        email,
+        password,
+        pseudo,
+        role,
+        imageUrls,
+        cv,
+        userId: `${result.user.uid}`,
+      });
+      const userDocRef = doc(db, "users", result.user.uid);
+      getDoc(userDocRef).then((snap) => {
+        alert("wellcome new user create successfully");
+        console.log("document written with ID:", snap.data());
+      });
+    });
   };
   return (
     <div>
@@ -145,7 +173,6 @@ const form = () => {
                     type="text"
                     name="password"
                     id="password"
-                    
                     class="bg-gray-700 border border-gray-600 text-white sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required=""
                     onChange={(e) => {
@@ -170,8 +197,25 @@ const form = () => {
                       setImageUpload(event.target.files[0]);
                     }}
                   />
-                  <img src={imageUrls} />;
+                  <img src={imageUrls} />
                 </div>
+                <select
+                  onChange={(e) => {
+                    setrole(e.target.value);
+                  }}
+                  id="small"
+                  class="block w-full p-2 mb-6 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                >
+                  <option selected>Role</option>
+                  <option value="f">Frontend</option>
+                  <option value="b">Backend</option>
+                  <option value="fu">Fullstack</option>
+                  <option value="m">mobile</option>
+                  <option value="ds">Data Science</option>
+                  <option value="de">Data Engineering</option>
+                  <option value="mu">Machine Learning</option>
+                  <option value="ga">Game Developement</option>
+                </select>
 
                 <button
                   type="submit"
