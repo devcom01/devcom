@@ -1,0 +1,260 @@
+.LandingPageCompanies__container {
+    width: 100%;
+    height: 100vh;
+    background: #ffffff;
+    .LandingPageCompanies__mainsection{
+        padding-top: 150px;
+        display: flex;
+        .LandingPageCompanies__mainsection__left {
+            padding-left: 100px;
+width: 50%;
+height: 100%;
+display: flex;
+flex-direction: column;
+.mainText {
+    width: 100%;
+    p {
+        
+        font-family: 'IBM Plex Mono', monospace;
+        font-weight: 800;
+        font-size: 70px;
+       
+    }
+}
+.mainparagrpah {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    p {
+        word-wrap: break-word;
+        font-weight: 500;
+        
+        font-size: 15px;
+
+
+    }
+
+
+    
+}        }
+        .LandingPageCompanies__mainsection__right {
+            width: 50%;
+            height: 100%;
+            display: flex; 
+            flex-wrap: wrap;
+        .firstContainer {       
+            width: 40%;
+            height: 40%;
+            .firstContainer__styled {
+                content: "";
+                width: 200px;
+                height: 70px;
+                border: 2px solid #000;
+                border-radius: 15px;
+               
+                position: absolute;
+                z-index: 1;
+            }
+            .firstContainer__main {
+                width: 200px;
+                height: 300px;
+                border-radius: 15px;
+                position: relative;
+                transform: rotate(200deg);
+                background-color: #000000;
+                left: 20px;
+                bottom: 0px;
+                z-index: 2;
+               .whole_content {
+                transform: rotate(180deg);
+
+                .step {              
+                      img {
+                    width: 50px;
+                    height: 50px;
+                    bottom: 240px;
+                    position: relative;
+                    margin-left: 5px;
+                }
+                p {
+                    bottom: 260px;
+                    left: 25px;
+                    position: absolute;
+                    margin-left: 5px;
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+            .step__hero {
+                position: absolute;
+                bottom: 220px;
+                h4 {
+                    width: 70px;
+                    text-align: center;
+                    border-radius: 7px;
+                    background-color: #32ffaa;
+                    margin-left: 15px;
+                    margin: 0;
+                    padding: 0;
+                    margin-left: 15px;
+                }
+
+            }
+            .step__maintext{
+                position: absolute;
+                bottom: 190px;
+                color: white;
+                p {
+                    margin-left: 15px;
+                    font-weight: 700;     
+                }
+                
+            }
+            .step__text {
+                color: white;
+                position: absolute;
+                bottom: 70px;
+                padding: 15px;
+            }
+               }
+            
+            }
+           
+        }            
+        
+        .secondContainer {
+            width: 50%;
+            height: 40%;
+        
+        
+        .secondContainer__styled {
+            content: "";
+            width:200px;
+            height: 70px;
+            position: relative;
+            top: 290px;
+            left: 50px;
+            border: 2px solid #000;
+            border-radius: 15px;
+            background-color: #000;        }
+        .secondContainer__main {
+            width: 230px;
+            border-radius: 15px;
+            height: 400px;
+            
+            position: relative;
+            bottom: 120px;
+            left:80px;
+            background-color: #32ffaa;
+            .secondContainer_whole_content {
+                width: 100%;
+                height: 100%;
+            .secondContainer_step{
+                margin: 0;
+                padding: 0;
+                height: 50px;
+                img {
+                    width: 65 px;
+                    height: 70px;
+                    margin-left: -10px;
+                }
+            }
+            .secondContainer_step__hero{
+                p {
+                  padding: 10px;
+                 font-weight: 500;
+                 color: #3a3a3a;
+                }
+                #br {
+                    margin: 0;
+                    padding: 0;
+                    content: '';
+                    width: 40%;
+                    margin-left: 20px;
+                    border-top: #ffffff solid 2px;
+                }
+            }
+            .secondContainer__step__text {
+                padding: 10px;
+                p {
+                    margin-top: 10px;
+                    font-weight: 500;
+                    font-style: italic;
+                    
+                }
+            }
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        }
+        .thirdContainer {
+                width: 50%;
+                height: 100px;
+                .thirdContainer__styled {
+                    content: "";
+            width:200px;
+            height: 70px;
+            position: relative;
+      top: 40px;
+            border: 2px solid #000;
+            border-radius: 15px;
+            background-color: #000;       
+                }
+            .thirdContainer__main {
+                width: 200px;
+                height: 240px;
+                position: relative;
+                bottom: 215px;
+                left: 20px;
+                border-radius: 17px;
+                background-color: #ffe86e;
+                .thirdContainer_whole_content {
+                    .thirdContainer_step {
+                        img {
+                            margin: 4px;
+                            width: 60px;
+                            height: 50px;
+                        }
+                    }
+                    .thirdContainer_step__hero {
+                        p {
+                            font-weight: 500;
+                            font-size: 15px;
+                            padding: 5px;
+                            color: #ffffff;
+                            text-align: center;
+                            text-shadow: #000 2px 2px 15px;
+                        }
+                    }
+                    .thirdContainer_step__text {
+                        width: 100%;
+                        color: #0a0a0a;
+                        p {
+                            margin-left: 10px;
+                            font-weight:700;
+                            font-size: 13px;
+                            padding: 1px;
+                        }
+                    }
+                }
+            }
+        }
+        .fourthContainer{
+            width: 200px;
+            height: 100px;
+            .fourthContainer__styled{
+                
+            }
+        }
+    }
+}
+}
