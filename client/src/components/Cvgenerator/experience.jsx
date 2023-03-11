@@ -44,13 +44,7 @@ onChange={(e) => {
   setdatef(e.target.value)
 }}></input></div>
 
-              {/* {experiences.length &&
-                experiences.map((e) => (
-                  <div>
-                    <h2>{e.about}</h2>
-                    <h2>{e.job}</h2>
-                  </div>
-                ))} */}
+            
               
               <div class="mt-1 flex text-white">
                 <textarea

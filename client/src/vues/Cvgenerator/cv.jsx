@@ -12,11 +12,7 @@ import { Route, Routes, Router } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const cv = () => {
-  // const [experiences, setexperiences] = useState([]);
-  // const [cv,setcv]= useState({
-  //     experiences : experiences ,
-  //     Education : Education
-  // })
+ 
   const [experiences, setexperiences] = useState([]);
   const [contacts, setcontacts] = useState([]);
   const [educations, seteducations] = useState([]);
@@ -105,8 +101,7 @@ const cv = () => {
                
                 <span class="flex-1 ml-3 whitespace-nowrap">Education</span>
                 
-                {/* <span class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span> */}
-              </a></Link>
+             </a></Link>
             </li>
             <li>
             <Link to="/experience" >
@@ -152,8 +147,7 @@ const cv = () => {
                   </g>
                 </svg>
                 <span class="flex-1 ml-3 whitespace-nowrap">Experience</span>
-                {/* <span class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span> */}
-              </a>
+             </a>
               </Link>
             </li>
             <li>
@@ -285,11 +279,7 @@ const cv = () => {
 
 </Routes>
 
-      {/* <div class="contact">
-        <Contact setcontacts={setcontacts} />
-      </div>
-      <Education seteducations={seteducations} /> 
-   <Experience setexperiences={setexperiences} /> */}
+    
     <div class="contact">
         <Resume resume={resume} />
       </div>

@@ -14,7 +14,7 @@ const Dashboard = () => {
  
    function handleSubmit(event) {
      event.preventDefault()
-     // TODO: Handle search logic
+    
    }
   return (
     <div class="">
@@ -28,21 +28,7 @@ const Dashboard = () => {
             
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-              {/* <form className="flex items-center" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Search"
-        value={query}
-        onChange={handleInputChange}
-        className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
-      />
-      <button
-        type="submit"
-        className="ml-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-      >
-        Search
-      </button>
-    </form> */}
+             
                 <a href="/" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
                 <a href="/about" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
                 <a href="/contact" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
@@ -75,8 +61,7 @@ const Dashboard = () => {
             <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-700 dark:hover:bg-gray-700">
             <svg aria-hidden="true" class="w-6 h-6 text-white transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg>
                <span class="flex-1 ml-3 text-white whitespace-nowrap">Dashboard</span>
-               {/* <span class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span> */}
-            </a>
+             </a>
             </Link>
          </li>
         
@@ -96,10 +81,7 @@ const Dashboard = () => {
 </aside>
 
 <div class="p-4 sm:ml-64 ">
-   {/* <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700"> */}
-      {/* <div class="grid grid-cols-3 gap-4 mb-4"> */}
-         {/* <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800"> */}
-         <Routes>
+ <Routes>
 
 <Route path="/Dashboard" element={<div class=""> 
 <Statistics/>

@@ -5,8 +5,7 @@
   background-repeat: no-repeat;
   
   height: 40vh;
- /* backdrop-filter: brightness(100%); */
- /* background-image: linear-gradient(90deg,rgba(45,45,58,.9) 15%,rgba(45,45,58,.7) 50%,rgba(43,43,53,.7) 100%); */
+ 
 display: flex;
 opacity: 0.5;
 transform: scale(1);
@@ -22,11 +21,11 @@ position: absolute;
   width:200px;
   height: 200px;
   
-  /* margin-top: 103px; */
+ 
   border-radius: 0;
     box-shadow: none;
   right: 30px;
-  /* bottom: 0; */
+ 
   bottom: 436px;
 }
 .sidecv{
@@ -134,33 +133,6 @@ download:hover{
 
 
 
-/* @mixin backlight($x, $y, $spread, $size, $colorA, $colorB, $duration) {
-  &:after {
-    position: absolute;
-    content: "";
-    top: $y;
-    left: $x;
-    right: 0;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-    transform: scale($size);
-    -webkit-filter: blur($spread);
-    -moz-filter: blur($spread);
-    -ms-filter: blur($spread);
-    filter: blur($spread);
-    background: linear-gradient(270deg, $colorA, $colorB);
-    background-size: 200% 200%;
-    animation: animateGlow $duration ease infinite;
-    
-    @keyframes animateGlow {
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
-    }
-  }
-} */
 
 .div{
   position: relative;
@@ -171,93 +143,9 @@ download:hover{
   color: #252B37;
   background-color: #151823;
   animation: textColor 10s ease infinite;
-  /* @include backlight(0, 5vw, 5vw, 0.75, #0fffc1, #7e0fff, 10s)*/} 
+} 
 
 
-
-
-
-
-
-
-
-
-/* background-image: url("https://www.transparenttextures.com/patterns/triangles.png"); */
-
-
-
-
-
-
-
-/* 
-
-
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
-
-* {
-  /* background-color: #202123;
-  background-image: url("https://uploads-ssl.webflow.com/62e3ee10882dc50bcae8d07a/631a5d4631d4c55a475f3e34_noise-50.png");
-  margin: 0;
-  background-size: 200px;
-  background-color: #16171b; */
-/* } */
-
-/* .sectionh{
-  margin: 0px 256px;
-  position: fixed;
-  background: url(/src/assets/imgs/bg.jpg);
-  background-repeat: no-repeat;
- 
-  height: 40vh;
-  /* backdrop-filter: brightness(100%); */
-  /* background-image: linear-gradient(90deg,rgba(45,45,58,.9) 15%,rgba(45,45,58,.7) 50%,rgba(43,43,53,.7) 100%); */
-  /* display: flex;
-  opacity: 0.5;
-  transform: scale(1);
-  justify-items: start;
-  margin: 0px 256px;
-
-  width: 83%;
-  background-size: cover;
-  background-position: center;
-} */
-/* .img {
-position: absolute;
-  width:200px;
-  height: 200px; */
-  
-  /* margin-top: 103px; */
-  /* border-radius: 0;
-    box-shadow: none;
-  right: 30px; */
-  /* bottom: 0; */
-  /* bottom: 436px;
-} */
-/* .p-discover{
-  position: absolute;
-    bottom: 587px;
-    left: -93px;
-}
-.p-build{
-  position: absolute;
-  bottom: 520px;
-  left: -68px;
-} */
-/* .aa{
-  margin:0px 0px
-}
-.divavatar{
-  padding: 34px;
-}
-.avatar{
-  margin:0px 24px; 
-}
-.contact{
-  position: fixed;
-    margin: 301px 256px;
-    width: 100%;
-} */
 
 .clearfix{
 	clear: both;
@@ -578,7 +466,6 @@ p{
   background-color: rgb(255, 255, 255);
   margin: 5px;
 }
-/* background-image: url("https://www.transparenttextures.com/patterns/triangles.png"); */
 .bgtable{margin: 173px 0px;
   width: 60%;
   padding: 19px;}
@@ -600,13 +487,7 @@ p{
   }
  
   .bar {
-    /* --tw-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
-    --tw-shadow-colored: 0 2px 2px 0 var(--tw-shadow-color), 0 3px 1px -2px var(--tw-shadow-color), 0 1px 5px 0 var(--tw-shadow-color);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-    --tw-bg-opacity: 1;
-    background-color:white;
-    background-clip: border-box;
-    border-color:white; */
+   
     box-shadow: 0 3px 8px 0 rgb(15 15 20 / 20%);
     background-color: #2f3349;
     border-style: solid;
@@ -622,7 +503,7 @@ p{
       --tw-bg-opacity: 1;
       background-color: #2f3349;
       background-clip: border-box;
-      /* border-color:white; */
+    
       border-style: solid;
       border-radius: 1rem;
       z-index: 20;
@@ -645,7 +526,7 @@ p{
         --tw-bg-opacity: 1;
         background-color: #2f3349;
         background-clip: border-box;
-        /* border-color:white; */
+      
         border-style: solid;
         border-radius: 1rem;
         z-index: 20;
@@ -668,7 +549,7 @@ p{
         --tw-bg-opacity: 1;
         background-color: #2f3349;
         background-clip: border-box;
-        /* border-color:white; */
+      
         border-style: solid;
         border-radius: 1rem;
         z-index: 20;
@@ -687,7 +568,7 @@ p{
           --tw-bg-opacity: 1;
           background-color: #2f3349;
           background-clip: border-box;
-          /* border-color:white; */
+       
           border-style: solid;
           border-radius: 1rem;
           z-index: 20;
@@ -703,7 +584,7 @@ p{
             --tw-bg-opacity: 1;
             background-color: #2f3349;
             background-clip: border-box;
-            /* border-color:white; */
+           
             border-style: solid;
             border-radius: 1rem;
             z-index: 20;

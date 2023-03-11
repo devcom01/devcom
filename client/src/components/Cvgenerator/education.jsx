@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import bg from "../../assets/imgs/bg.jpg";
-//<script src="../path/to/flowbite/dist/datepicker.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/datepicker.min.js"></script>;
 const education = ({ seteducations }) => {
   const [university, setUniversity] = useState("");
@@ -77,26 +77,7 @@ const education = ({ seteducations }) => {
 onChange={(e) => {
   setdates(e.target.value)
 }}></input>
-                       {/* <label htmlFor="country" className="block mb-2 text-sm font-medium text-white dark:text-white">
-                        start:
-                      </label>
-                      <select  onChange={(e) => {
-                        setdates(e.target.value)
-                      }}
-                        id="date"
-                        name="date"
-                        autoComplete="date"
-                        className="bg-white border border-gray-600 input sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      >
-                        <option>2000</option>
-                        <option>2000</option>
-                        <option>2000</option>
-                        <option>2000</option>
-                        <option>2000</option>
-                        <option>2000</option>
-                        <option>2000</option>
-                        <option>2000</option>
-                      </select> */}
+                   
                     
                 </div>
                 <div className="flex">
@@ -105,21 +86,7 @@ onChange={(e) => {
 onChange={(e) => {
   setdatef(e.target.value)
 }}></input>
-                      {/* <label htmlFor="country" className="block mb-2 text-sm font-medium text-white dark:text-white">
-                        End:
-                      </label>
-                      <select  onChange={(e) => {
-                        setdatef(e.target.value)
-                      }}
-                        id="date"
-                        name="date"
-                        autoComplete="date"
-                        className="bg-white border border-gray-600 input sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      >
-                        <option>United States</option>
-                        <option>Canada</option>
-                        <option>Mexico</option>
-                      </select> */}
+                 
                
                        </div>
                        
