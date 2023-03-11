@@ -25,7 +25,7 @@ const resume = (props) => {
   const ref2 = useRef();
   const handleGeneratePdf = () => {
     const docpdf = new jsPDF({
-      format: "a4",
+      format: "a1",
       unit: "px",
     });
 
@@ -55,22 +55,27 @@ const resume = (props) => {
     });
   };
   const savecv = async (e) => {
-    const washingtonRef = doc(db, "users", "gv04GaM5lZgHlYTe2jZZ4eMqORj2");
+    const userRef = doc(db, "users", "gv04GaM5lZgHlYTe2jZZ4eMqORj2");
 
   
-    await updateDoc(washingtonRef, {
+    await updateDoc(userRef, {
       cv:pdf,
     });
+    console.log("saved")
   };
   return (
     <div>
+      
+              
       <section class="section dark:bg-gray-900">
-        <div class="box-outer">
-          <div class="resume-box" ref={ref2}>
+        
+        <div class="box-outer"  ref={ref2}>
+          <div class="resume-box" >
             <div class="box-1">
               <div class="content">
-                <div class="flex items-center justify-center mb-10">
-                  <img
+                
+                <div class="flex z-50 items-center justify-center mb-10">
+                    <img
                     src="https://i.pinimg.com/originals/a8/bc/90/a8bc90ea196737604770aaf9c2d56a51.jpg"
                     alt=""
                     class="rounded-full w-32 border-2 border-gray-300"
@@ -312,14 +317,10 @@ const resume = (props) => {
           </div>
 
 
-          <button class="download" onClick={handleGeneratePdf}>
+          <button class="download" onClick={(e)=>{handleGeneratePdf(e),savepdfstorage(e),savecv(e)} } >
             Download
           </button>
-          <button class="download" onClick={savepdfstorage}>
-            save to storage
-          </button>
-
-          <button onClick={savecv}>savecv in firebase</button>
+         
         </div>
       </section>
     </div>
