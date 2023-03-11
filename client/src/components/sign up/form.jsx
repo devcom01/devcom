@@ -22,7 +22,7 @@ import {
 } from "firebase/storage";
 import { storage } from "../../Firebase";
 import signup from "../../vues/sign in/signin";
-import { MyContext } from "../Contextt/Context";
+
 import { usePrevious } from "@material-tailwind/react";
 
 const imagesListRef = ref(storage, "images/");
