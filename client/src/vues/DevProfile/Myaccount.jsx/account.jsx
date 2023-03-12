@@ -55,9 +55,9 @@ const account = () => {
      </div>
      <div className="subscription">
       
+     <button>sign out </button>
      </div>
      
-     <button>sign out </button>
           </div>
     </>
   )
