@@ -19,7 +19,7 @@ const toyproblems = () => {
   const [time,settime] =useState(null)
   const [status,setstatus] =useState(null)
   const [memory,setmemory] =useState(null)
-
+  const [stop,setstop] = useState(false)
 
 
   useEffect(() => {
@@ -37,6 +37,11 @@ const toyproblems = () => {
       animation.reverse();
     });
   });
+  useEffect(() => {
+    setTimeout(() => {
+      setstop(true)
+    }, 1000*12)
+  },[status])
 
    const handleeditor = (value) => {
     handlechange("code", value);
@@ -220,11 +225,12 @@ const toyproblems = () => {
             <div className="toyproblem_text">
               { status && memory && time ?
               <>
-              {status==="Accepted" && <Confetti
+              {status==="Accepted" &&!stop  && <Confetti
       width="500px"
       height="500px"
       
-    />} 
+    />
+    }
               <h4>Status : {status}</h4>
               <h4>Memory : {memory} </h4>
               <h4>Time: {time} s</h4>
