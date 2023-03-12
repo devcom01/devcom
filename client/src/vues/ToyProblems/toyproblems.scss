@@ -104,7 +104,7 @@
             &:hover {
             
             cursor: pointer;
-            color: rgb(0, 113, 148);
+            color: rgb(255, 255, 255);
 
          
         }
@@ -143,6 +143,8 @@ background-color: transparent;
  text-align: center;
  &:hover {
     color: rgb(0, 120, 225);
+    background-color: #2f3036;
+    border-radius: 7px;
     cursor: pointer;
  }
 

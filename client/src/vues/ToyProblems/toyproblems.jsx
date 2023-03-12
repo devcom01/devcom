@@ -9,10 +9,18 @@ import { Avatar } from "@mui/material";
 import { GiStarMedal } from "react-icons/gi";
 import Editor from "@monaco-editor/react";
 import { languages } from "./languagesSupported";
+import Confetti from 'react-confetti'
+import axios from "axios";
 const toyproblems = () => {
   const languageRef = useRef(null);
-  const [code,setCode]=useState(null);
+  const [code,setCode]=useState("// TIME TO HACK !");
   const [defaultvalue, setValue] = useState(code || "");
+  const [selectedButton,setselectedButton] =useState(1)
+  const [time,settime] =useState(null)
+  const [status,setstatus] =useState(null)
+  const [memory,setmemory] =useState(null)
+
+
 
   useEffect(() => {
     let h1 = document.querySelector(".toyproblems__sideBar");
@@ -29,9 +37,7 @@ const toyproblems = () => {
       animation.reverse();
     });
   });
-  useEffect(() => {
-    console.log(code);
-  },[code])
+
    const handleeditor = (value) => {
     handlechange("code", value);
   };
@@ -46,22 +52,55 @@ const toyproblems = () => {
       }
     }
   };
+  const checkStatus = async (token) => {
+    const options = {
+      method: "GET",
+      url: 'https://judge0-ce.p.rapidapi.com/submissions/'+token,
+      params: { base64_encoded: "true", fields: "*" },
+      headers: {
+        "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com",
+        "X-RapidAPI-Key": "d99009bfd4mshce3689b0f908b24p1fac34jsn19b8bdf15c45",
+      },
+    };
+    try {
+      let response = await axios.request(options);
+      let statusId = response.data.status?.id;
+
+      if (statusId === 1 || statusId === 2) {
+  
+        setTimeout(() => {
+          checkStatus(token)
+        }, 2000)
+       
+      } else {
+        setselectedButton(2)
+        settime(response.data.time)
+        setmemory(response.data.memory)
+        setstatus(response.data.status.description)
+        console.log(response.data)
+      
+      }
+    } catch (err) {
+      console.log("err", err);
+      
+    }
+  };
   const Compile = ()=>{
     const formData = {
       language_id: languageRef.current.options[languageRef.current.selectedIndex].value,
-      // encode source code in base64
+   
       source_code: btoa(code),
-      stdin: btoa(customInput),
+      stdin: btoa("aaa"),
     };
     const options = {
       method: "POST",
-      url: process.env.REACT_APP_RAPID_API_URL,
+      url: "https://judge0-ce.p.rapidapi.com/submissions",
       params: { base64_encoded: "true", fields: "*" },
       headers: {
         "content-type": "application/json",
         "Content-Type": "application/json",
-        "X-RapidAPI-Host": process.env.REACT_APP_RAPID_API_HOST,
-        "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
+        "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com",
+        "X-RapidAPI-Key": "d99009bfd4mshce3689b0f908b24p1fac34jsn19b8bdf15c45",
       },
       data: formData,
     };
@@ -69,14 +108,12 @@ const toyproblems = () => {
     axios
       .request(options)
       .then(function (response) {
-        console.log("res.data", response.data);
+       
         const token = response.data.token;
         checkStatus(token);
       })
       .catch((err) => {
-        let error = err.response ? err.response.data : err;
-        setProcessing(false);
-        console.log(error);
+                console.log(err);
       });
   
   }
@@ -146,8 +183,8 @@ const toyproblems = () => {
           </div>
           <div className="infos__buttons">
             <div className="infos__buttons__left">
-              <button>Instructions</button>
-              <button>Output</button>
+              <button onClick={e=>{setselectedButton(1)}}>Instructions</button>
+              <button  onClick={e=>setselectedButton(2)} >Output</button>
             </div>
 
             <div className="infos__buttons__right">
@@ -164,7 +201,7 @@ const toyproblems = () => {
                   }
                 })}
               </select>
-              <button id="testit" onClick={(e) => console.log(code)}>
+              <button id="testit" onClick={(e) => Compile()}>
                 Compile and Execute{" "}
               </button>
             </div>
@@ -172,12 +209,32 @@ const toyproblems = () => {
         </div>
         <div className="toyproblem__mainTwoSections">
           <div className="toyproblem__firstSection">
+          {selectedButton===1 ?
             <div className="toyproblem_text">
               {"Return the number (count) of vowels in the given string.We will consider a, e, i, o, u as vowels for this Kata (but not y).The input string will only consist of lower case letters and/or spaces."
                 .split(".")
                 .map((phrase) => phrase.length > 1 && <p>{phrase} .</p>)}
               <div className="styledhr"></div>
             </div>
+            :
+            <div className="toyproblem_text">
+              { status && memory && time ?
+              <>
+              {status==="Accepted" && <Confetti
+      width="500px"
+      height="500px"
+      
+    />} 
+              <h4>Status : {status}</h4>
+              <h4>Memory : {memory} </h4>
+              <h4>Time: {time} s</h4>
+              
+              </>:
+              <>
+              <h1>Please Champ submit your code ! </h1></>
+}
+              </div>
+            }
           </div>
           <div className="toyproblem__secondSection">
             <div className="toyproblem__editor">
@@ -185,12 +242,12 @@ const toyproblems = () => {
                 <p>solution</p>
               </div>
               <Editor
-              ref={code}
+             
                 height="71vh"
                 width="96.4%"
                 theme="vs-dark"
                 language="javascript"
-                value={}
+                value={defaultvalue}
                 onChange={handleeditor}
               />
             </div>
