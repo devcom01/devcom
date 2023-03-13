@@ -1,7 +1,6 @@
 import "./companies.scss"
 import React from 'react'
 import NavBar from "../../components/Layout/NavBar"
-
 import code from "../../assets/imgs/code.png"
 import circle from "../../assets/imgs/etape.png"
 import interview from "../../assets/imgs/interview.png"
