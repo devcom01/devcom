@@ -1,138 +1,43 @@
-import React from 'react'
+import React,{useState} from 'react'
 
-const Offers = () => {
+const Offers = ({setOffers}) => {
+  const [title,setTitle]=useState("")
+  const [description,setDescription]=useState("")
+ 
   return (
     <div>
-      <section class=" section  dark:bg-gray-900">
-        <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-          <div class="w-full form rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <h1 class="text-xl font-bold leading-tight tracking-tight text-white md:text-2xl dark:text-white">
-               Contact :
-              </h1>
-              <form class="space-y-4 md:space-y-6"  action="#">
-                <div className='flex'>
-                <div>
-                
-                  <input
-                    type="text"
-                    name="Firstname"
-                    id="Firstname"
-                    class="bg-white border input border-white sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Fisrt name"
-                    
-                  />
-                  </div>
-                  <div className='mx-5'>
-                  
-  
-                 
-                 
-                  
-                  <input
-                    type="text"
-                    name="Lastname"
-                    id="Lastname"
-                    class="bg-white border border-gray-600 input sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                   
-                    placeholder="Last name"
-                   
-                  />
-                 
-                  </div>
-                  </div>
-                  <div className='flex'>
-                <div>
-               
-                  <input
-                    type="text"
-                    name="JobTitle"
-                    id="JobTitle"
-                    class="bg-white border border-gray-600 input sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Job Title"
-                    
-                  />
-                  </div>
-                  
-                  <div className='mx-5'>
-                 
-                  <input
-                    type="text"
-                    name="Adress"
-                    id="Adress"
-                    class="bg-white border border-gray-600 input sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                   placeholder="Adress"
-                    
-                  />
-                  </div>
-                  </div>
-               
-                  <div className='flex'>
-                <div>
-               
-                  <input
-                    type="text"
-                    name="phone"
-                    id="phone"
-                    class="bg-white border border-gray-600 input sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Phone"
-                    
-                  />
-                  
-                  </div>
-                  <div className='mx-5'>
-             
-                  <input
-                    type="email"
-                    name="E-mail"
-                    id="E-mail"
-                    class="bg-white border border-gray-600 input sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                   placeholder="E-mail"
-                    
-                  />
-                  </div>
-                  </div>
-                  <div className='flex'>
-                <div >
-                  <div class="flex items-center p-2 text-base font-normal text-white rounded-lg dark:text-white   dark:hover:bg-gray-700">
-               
-                 </div>
-                 
-                  <input
-                    type="Linkedin"
-                    name="Linkedin"
-                    id="Linkedin"
-                    class="bg-white border border-gray-600 input sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Linkedin"
-                    
-                  />
-                  </div>
-                  <div className='mx-5'>
-                  <div class="flex items-center p-2 text-base font-normal text-white rounded-lg dark:text-white   dark:hover:bg-gray-700">
-              
-                  </div>
-                  <input
-                    type="email"
-                    name="Github"
-                    id="Github"
-                    class="bg-white border border-gray-600 input sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Github"
-                   
-                  />
-            
-                   <button class=" button text-gray-800 font-semibold py-2 px-4 border  rounded shadow"
-                  
-                      >
-                       SEND 
-                      </button>
-                  </div>
-                  </div>
-                  </form>
-                </div>
-                </div>
-                </div>
-</section>
 
+<div class="offers">
+<form class="bg-white shadow rounded-lg mb-6 p-4 ">
+            <input type="text" placeholder="Type title ..." class=" focus:outline-none  w-full rounded-lg p-2 text-sm bg-gray-100 border border-transparent appearance-none rounded-tg placeholder-gray-400"
+             onChange={(e)=>{setTitle(e.target.value)}}/>
+            <textarea name="message" placeholder="Type something..." class=" mt-3 focus:outline-none  w-full rounded-lg p-2 text-sm bg-gray-100 border border-transparent appearance-none rounded-tg placeholder-gray-400"
+             onChange={(e)=>{setDescription(e.target.value)}}></textarea>
+            <footer class="flex justify-between mt-2">
+            <div class="flex gap-2">
+            <label>
+  <input type="file" class="hidden" name="file1"/>
+  <span class="flex items-center transition ease-out duration-300 hover:bg-blue-500 hover:text-white bg-blue-100 w-8 h-8 px-2 rounded-full text-blue-400 cursor-pointer">
+  <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+  </span></label>
+  <label>
+  <input type="file" class="hidden" name="file1"/>
+  <span class="flex items-center transition ease-out duration-300 hover:bg-blue-500 hover:text-white bg-blue-100 w-8 h-8 px-2 rounded-full text-blue-400 cursor-pointer">
+  <svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="icomoon-ignore"> </g> <path d="M28.186 9.069l-6.855 4.122v-4.655c0-0.883-0.716-1.599-1.599-1.599h-17.060c-0.884 0-1.599 0.716-1.599 1.599v14.928c0 0.883 0.715 1.599 1.599 1.599h17.060c0.883 0 1.599-0.716 1.599-1.599v-4.744l7.006 4.211h2.591v-13.861h-2.742zM20.265 23.464c0 0.294-0.24 0.533-0.533 0.533h-17.060c-0.295 0-0.533-0.239-0.533-0.533v-14.928c0-0.294 0.238-0.533 0.533-0.533h17.060c0.294 0 0.533 0.239 0.533 0.533v14.928zM29.861 21.864h-1.229l-7.301-4.389v-3.039l7.15-4.3h1.38v11.729z" fill="currentColor"> </path> </g></svg></span></label>
+ </div>
+                
+                <button class="flex items-center py-2 px-4 rounded-lg text-sm bg-blue-600 text-white shadow-lg" onClick={(e)=>{
+                  e.preventDefault();
+                  setOffers((offers)=>[...offers,
+                  {title:title,
+                  description:description}])
+                }}>Send
+                    <svg class="ml-1" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+               
+                </button>
+            </footer>
+        </form>
+</div>
 
     </div>
   )

@@ -42,6 +42,7 @@ margin-top: -148px;
   left: -68px;
 }
 .form {
+ 
   background: linear-gradient(159deg,rgba(37,37,50,.98) 0,rgba(35,35,45,.98) 100%);
 }
 .input{
@@ -85,6 +86,7 @@ button:hover{
     margin: 19px 34px;
     border-color:  #ffc107;
 }
+
 buttonex:hover{
   background-color: #daa711;
 }
