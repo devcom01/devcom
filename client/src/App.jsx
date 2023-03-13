@@ -6,9 +6,10 @@ import Cv from "./vues/Cvgenerator/cv.jsx";
 import Dashboard from "./vues/Dashboard/Dashboard.jsx";
 
 import Stack from "./components/stackdeveloper/Stack.jsx"
-import Companyprofile from "./components/Company/Companyprofile.jsx"
+import Company from "./components/Company/Campany";
 
 import Offers from "./components/Company/Offers";
+import UpdateProfile from "./components/Company/Profile/UpdateProfile";
 
 function App() {
   const logout = () => {
@@ -24,9 +25,9 @@ function App() {
       {/* <Cv /> */}
      
       {/* <Stack/> */}
-      {/* <Companyprofile/> */}
-      <Offers/>
-     
+      {/* <Company/> */}
+      {/* <Offers/> */}
+     {/* <UpdateProfile/> */}
       {/* <Dashboard/> */}
       {/* <Signup/> */}
     
