@@ -13,7 +13,7 @@ import Confetti from 'react-confetti'
 import axios from "axios";
 const toyproblems = () => {
   const languageRef = useRef(null);
-  const [code,setCode]=useState("// TIME TO HACK !");
+  const [code,setCode]=useState("// TIME TO HACK ! DONT FORGET DO ADD AT THE END OF YOUR CODE A CONSOLE.LOG OF THE FUNCTION ITS SELF");
   const [defaultvalue, setValue] = useState(code || "");
   const [selectedButton,setselectedButton] =useState(1)
   const [time,settime] =useState(null)
@@ -40,7 +40,7 @@ const toyproblems = () => {
   useEffect(() => {
     setTimeout(() => {
       setstop(true)
-    }, 1000*12)
+    }, 1000*10)
   },[status])
 
    const handleeditor = (value) => {
@@ -93,9 +93,10 @@ const toyproblems = () => {
   const Compile = ()=>{
     const formData = {
       language_id: languageRef.current.options[languageRef.current.selectedIndex].value,
-   
-      source_code: btoa(code),
+     source_code: btoa(code),
       stdin: btoa("aaa"),
+      expected_output:btoa("aaa"),
+
     };
     const options = {
       method: "POST",
@@ -227,7 +228,7 @@ const toyproblems = () => {
               <>
               {status==="Accepted" &&!stop  && <Confetti
       width="500px"
-      height="500px"
+      height="1000px"
       
     />
     }
