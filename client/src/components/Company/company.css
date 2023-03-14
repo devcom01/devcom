@@ -138,4 +138,38 @@ color:"#80597e";
         margin: -118px 393px;
         width: 46%;
     }
-  
+    .cover{width: 113%;;
+    height: 40px;}
+    .imgopacity{    height: 184%;
+        width: 101.2%;}
+    .IMG{    max-width: 96%;
+        height: auto;}
+        .profilef{
+            margin: -195px 92px;
+
+        }
+        .div1{
+            margin: 318px 0px;
+
+            width: 94.4%;
+            padding: 0px 0px;
+            position: absolute;
+        }
+        .div2{   margin: 523px 0px;
+
+            width: 36%;
+            padding: 0px 0px;
+            position: absolute;}
+            .div3{     margin: 523px 564px;
+                width: 56%;
+
+                padding: 0px 0px;
+                position: absolute;}
+                .div4{margin:726px 564px;
+                    width: 56%;
+
+                    padding: 0px 0px;
+                    position: absolute;}
+        .coverdivv{z-index: 1111;
+            position: absolute;}
+  .bodyyy{margin:34px 25px;}

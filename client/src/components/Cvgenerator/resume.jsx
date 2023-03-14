@@ -3,7 +3,7 @@ import ReactPrint from "react-to-print";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../Firebase";
 import jsPDF from "jspdf";
-
+import avatar from "../../assets/imgs/face.jpg";
 import {
   ref,
   uploadBytes,
@@ -12,10 +12,10 @@ import {
   list,
 } from "firebase/storage";
 import { storage } from "../../Firebase";
-
+import html2canvas from "html2canvas";
 
 const resume = (props) => {
-  const [pdf, setpdf] = useState("");
+  const [ link, setLink] = useState("");
   const [docState, setDocState] = useState("");
   const { contacts, experiences, educations, profil } = props.resume;
 
@@ -28,15 +28,13 @@ const resume = (props) => {
     const docpdf = new jsPDF({
       format: "a1",
       unit: "px",
+      width: "200",
     });
-
-  
-    docpdf.setFont("Inter-Regular", "normal");
 
     docpdf.html(ref2.current, {
       async callback(docpdf) {
         var x = await docpdf.save("document");
-    
+
         const pdfData = x.output("blob");
         const pdfBlob = new Blob([pdfData], { type: "application/pdf" });
         setDocState(pdfBlob);
@@ -44,77 +42,71 @@ const resume = (props) => {
     });
   };
 
-  const savepdfstorage = () => {
-    console.log("docState", docState);
-    if (docState == null) return;
-    const pdfRef = ref(storage, `pdf/${docState}`);
-    uploadBytes(pdfRef, docState).then((snapshot) => {
-      getDownloadURL(snapshot.ref).then((url) => {
-        setpdf((prev) => [...prev, url]);
-        console.log(url, "url");
+  // const savepdfstorage = () => {
+  //   console.log("docState", docState);
+  //   if (docState == null) return;
+  //   const pdfRef = ref(storage, `pdf/${docState}`);
+  //   uploadBytes(pdfRef, docState).then((snapshot) => {
+  //     getDownloadURL(snapshot.ref).then((url) => {
+  //       setpdf((prev) => [...prev, url]);
+  //       console.log(url, "url");
+  //     });
+  //   });
+  // };
+  const savecv = async (e) => {
+     try {
+      const userRef = doc(db, "users", "gv04GaM5lZgHlYTe2jZZ4eMqORj2");
+      
+
+      await updateDoc(userRef, {
+        cvv: e,
+      });
+  
+      console.log("CV saved successfully!");
+    } catch (error) {
+      console.error("Error saving CV:", error);
+    }
+  };
+const haifa=  async () => {
+  try {
+    const element = ref2.current;
+
+    const canvas = await html2canvas(element);
+    const imgBlob = await new Promise((resolve) => {
+      canvas.toBlob((blob) => {
+        resolve(blob);
       });
     });
-  };
-  const savecv = async (e) => {
-    const userRef = doc(db, "users", "gv04GaM5lZgHlYTe2jZZ4eMqORj2");
 
-  
-    await updateDoc(userRef, {
-      cv:pdf,
-    });
-    console.log("saved")
-  };
+    const storageRef = ref(storage, "pdf/my-cv.jpg");
+    await uploadBytes(storageRef, imgBlob);
 
+    const downloadUrl = await getDownloadURL(storageRef);
+    console.log(downloadUrl)
+    
+
+    console.log("Image generated and stored successfully!");
+    savecv(downloadUrl)
+  } catch (error) {
+    console.error("Error generating and storing image:", error);
+  }
+}
   return (
-    <div >
-      {/* <svg 
-                      class=" fill-yellow-400 w-6 h-6 "
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                      <g
-                        id="SVGRepo_tracerCarrier"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></g>
-                      <g id="SVGRepo_iconCarrier">
-                        {" "}
-                        <circle
-                          cx="12"
-                          cy="10"
-                          r="3"
-                          stroke="#000000"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        ></circle>{" "}
-                        <path
-                          d="M19 9.75C19 15.375 12 21 12 21C12 21 5 15.375 5 9.75C5 6.02208 8.13401 3 12 3C15.866 3 19 6.02208 19 9.75Z"
-                          stroke="#000000"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        ></path>{" "}
-                      </g>
-                    </svg> */}
-              
+    <div>
+     
+
       <section class="section dark:bg-gray-900">
-        
-        <div class="box-outer" >
+        <div class="box-outer">
           <div class="resume-box" ref={ref2}>
             <div class="box-1">
               <div class="content">
-                
                 <div class="flex z-50 items-center justify-center mb-10">
-                    {/* <img
-                    src="https://i.pinimg.com/originals/a8/bc/90/a8bc90ea196737604770aaf9c2d56a51.jpg"
+                  <img
+                    src={avatar}
                     alt=""
                     class="rounded-full w-32 border-2 border-gray-300"
-                  /> */}
+                  />
                 </div>
-               
 
                 <h1 class="text-gray-400 uppercase tracking-widest text-lg font-bold">
                   Contact
@@ -123,7 +115,7 @@ const resume = (props) => {
 
                 {contacts[0] && (
                   <h1 class="flex text-sm">
-                    {/* <svg
+                    <svg
                       class=" fill-yellow-400 w-6 h-6 "
                       viewBox="0 0 24 24"
                       fill="none"
@@ -143,14 +135,14 @@ const resume = (props) => {
                           d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM7.005 9C7.005 8.45 7.45 8 8 8H16C16.55 8 17 8.45 17 9V15C17 15.55 16.55 16 16 16H8C7.45 16 7 15.55 7 15L7.005 9ZM12 12.5L8.00001 9.99997V15H16V9.99997L12 12.5ZM12 11.5L8.00001 9.00001H16L12 11.5Z"
                         ></path>{" "}
                       </g>
-                    </svg> */}
+                    </svg>
 
                     {contacts[0].Email}
                   </h1>
                 )}
                 {contacts[0] && (
                   <h1 class="flex text-sm">
-                    {/* <svg
+                    <svg
                       class=" fill-yellow-400 w-6 h-6 "
                       version="1.1"
                       id="Capa_1"
@@ -175,13 +167,13 @@ const resume = (props) => {
                           </g>{" "}
                         </g>{" "}
                       </g>
-                    </svg> */}
+                    </svg>
                     {contacts[0].Linkedin}
                   </h1>
                 )}
                 {contacts[0] && (
                   <h1 class="flex  text-sm">
-                    {/* <svg
+                    <svg
                       class=" fill-yellow-400 w-6 h-6 "
                       viewBox="0 0 32 32"
                       xmlns="http://www.w3.org/2000/svg"
@@ -195,13 +187,13 @@ const resume = (props) => {
                       <g id="SVGRepo_iconCarrier">
                         <path d="M24.92 12.183c0-1.586-.604-2.864-1.585-3.83.172-.547.398-1.763-.229-3.321 0 0-1.114-.348-3.628 1.315a12.695 12.695 0 0 0-3.081-.366c-1.154 0-2.322.143-3.409.44-2.596-1.747-3.74-1.391-3.74-1.391-.748 1.847-.287 3.215-.145 3.554-.883.936-1.414 2.133-1.414 3.594 0 1.111.128 2.099.44 2.964l.325.732c.879 1.614 2.606 2.655 5.677 2.983-.434.289-.885.779-1.062 1.612-.594.28-2.475.966-3.603-.944 0 0-.633-1.148-1.842-1.235 0 0-1.174-.017-.08.722 0 0 .782.367 1.326 1.738 0 0 .705 2.342 4.114 1.593v2.417s-.076.857-.867 1.143c0 0-.469.312.034.497 0 0 2.205.174 2.205-1.604v-2.643s-.09-1.047.429-1.404v4.332s-.032 1.031-.576 1.421c0 0-.362.646.433.468 0 0 1.517-.211 1.584-1.967l.035-4.383h.363l.033 4.383c.076 1.748 1.59 1.967 1.59 1.967.793.179.429-.468.429-.468-.54-.389-.579-1.421-.579-1.421v-4.297c.52.402.436 1.369.436 1.369v2.643c0 1.777 2.2 1.604 2.2 1.604.505-.186.036-.498.036-.498-.793-.286-.867-1.143-.867-1.143v-3.461c0-1.346-.574-2.056-1.137-2.435 3.277-.318 4.845-1.368 5.572-2.99-.015.027.26-.726.26-.726.25-.859.325-1.855.325-2.963h-.002z"></path>
                       </g>
-                    </svg> */}
+                    </svg>
                     {contacts[0].Github}
                   </h1>
                 )}
                 {contacts[0] && (
                   <h1 class="flex text-sm">
-                    {/* <svg
+                    <svg
                       class=" fill-yellow-400 w-6 h-6 "
                       viewBox="0 0 32 32"
                       version="1.1"
@@ -218,14 +210,14 @@ const resume = (props) => {
                         <title>phone</title>{" "}
                         <path d="M0 10.375c0 0.938 0.344 1.969 0.781 3.063s1 2.125 1.438 2.906c1.188 2.063 2.719 4.094 4.469 5.781s3.813 3.094 6.125 3.938c1.344 0.531 2.688 1.125 4.188 1.125 0.75 0 1.813-0.281 2.781-0.688 0.938-0.406 1.781-1.031 2.094-1.781 0.125-0.281 0.281-0.656 0.375-1.094 0.094-0.406 0.156-0.813 0.156-1.094 0-0.156 0-0.313-0.031-0.344-0.094-0.188-0.313-0.344-0.563-0.5-0.563-0.281-0.656-0.375-1.5-0.875-0.875-0.5-1.781-1.063-2.563-1.469-0.375-0.219-0.625-0.313-0.719-0.313-0.5 0-1.125 0.688-1.656 1.438-0.563 0.75-1.188 1.438-1.625 1.438-0.219 0-0.438-0.094-0.688-0.25s-0.5-0.281-0.656-0.375c-2.75-1.563-4.594-3.406-6.156-6.125-0.188-0.313-0.625-0.969-0.625-1.313 0-0.406 0.563-0.875 1.125-1.375 0.531-0.469 1.094-1.031 1.094-1.719 0-0.094-0.063-0.375-0.188-0.781-0.281-0.813-0.656-1.75-0.969-2.656-0.156-0.438-0.281-0.75-0.313-0.906-0.063-0.094-0.094-0.219-0.125-0.375s-0.094-0.281-0.125-0.406c-0.094-0.281-0.25-0.5-0.406-0.625-0.156-0.063-0.531-0.156-0.906-0.188-0.375 0-0.813-0.031-1-0.031-0.094 0-0.219 0-0.344 0.031h-0.406c-1 0.438-1.719 1.313-2.25 2.344-0.5 1.031-0.813 2.188-0.813 3.219z"></path>{" "}
                       </g>
-                    </svg> */}
+                    </svg>
 
                     {contacts[0].Phone}
                   </h1>
                 )}
                 {contacts[0] && (
                   <h1 class="flex text-sm">
-                    {/* <svg
+                    <svg
                       class=" fill-yellow-400 w-6 h-6 "
                       viewBox="0 0 24 24"
                       fill="none"
@@ -256,7 +248,7 @@ const resume = (props) => {
                           stroke-linejoin="round"
                         ></path>{" "}
                       </g>
-                    </svg> */}
+                    </svg>
                     {contacts[0].Adress}
                   </h1>
                 )}
@@ -266,7 +258,6 @@ const resume = (props) => {
                 </h1>
 
                 <hr class="w-1/6 mb-5" />
-              
 
                 {educations && (
                   <div>
@@ -349,11 +340,15 @@ const resume = (props) => {
             </div>
           </div>
 
-
-          <button class="download" onClick={(e)=>{handleGeneratePdf(e),savepdfstorage(e),savecv(e)} } >
+          <button
+            class="download"
+            onClick={(e) => {
+              // handleGeneratePdf(e), savepdfstorage(e), savecv(e);
+              haifa( )
+            }}
+          >
             Download
           </button>
-        
         </div>
       </section>
     </div>

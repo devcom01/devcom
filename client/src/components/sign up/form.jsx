@@ -116,18 +116,54 @@ const form = () => {
   };
   return (
     <div>
-      <section class="body">
-        <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-          <div class="  w-full formup rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <h1 class="text-xl font-bold leading-tight tracking-tight text-white md:text-2xl dark:text-white">
-                Create and account
-              </h1>
-              <form class="space-y-4 md:space-y-6" action="#">
+      <section >
+        <div className="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0 bg-gray-50">
+         
+            <div>
+                    <a href="/">
+                        <h3 className="text-4xl font-bold text-purple-600">
+                            Logo
+                        </h3>
+                    </a>
+                </div>
+              <form className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-lg sm:rounded-lg" action="#">
+              <div>
+                            <label
+                                htmlFor="name"
+                                className="block text-sm font-medium text-gray-700 undefined"
+                            >
+                                First Name
+                            </label>
+                            <div className="flex flex-col items-start">
+                                <input
+                                    type="text"
+                                    name="name"
+                                    
+                                    className="bg-indigo-50 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <label
+                                htmlFor="name"
+                                className="block text-sm font-medium text-gray-700 undefined"
+                            >
+                                Last Name
+                            </label>
+                            <div className="flex flex-col items-start">
+                                <input
+                                    type="text"
+                                    name="name"
+                                    
+                                    className="bg-indigo-50 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                />
+                            </div>
+                        </div>        
                 <div>
+                  
                   <label
                     for="email"
-                    class="block mb-2 text-sm font-medium text-white dark:text-white"
+                    class="block text-sm font-medium text-gray-700 undefined"
                   >
                     Your email
                   </label>
@@ -135,8 +171,8 @@ const form = () => {
                     type="email"
                     name="email"
                     id="email"
-                    class="inputu text-white sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="name@company.com"
+                    class="bg-indigo-50 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+               
                     required=""
                     onChange={(e) => {
                       setEmail(e.target.value);
@@ -146,16 +182,16 @@ const form = () => {
                 <div>
                   <label
                     for="password"
-                    class="block mb-2 text-sm font-medium text-white dark:text-white"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
-                    Password
+                    Your Password
                   </label>
                   <input
                     type="password"
                     name="password"
                     id="password"
-                    placeholder="••••••••"
-                    class="inputu text-white sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    
+                    class="bg-indigo-50 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required=""
                     onChange={(e) => {
                       setPassword(e.target.value);
@@ -165,7 +201,7 @@ const form = () => {
                 <div>
                   <label
                     for="password"
-                    class="block mb-2 text-sm font-medium text-white dark:text-white"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     pseudo
                   </label>
@@ -173,13 +209,52 @@ const form = () => {
                     type="text"
                     name="password"
                     id="password"
-                    class="inputu text-white sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class="bg-indigo-50 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required=""
                     onChange={(e) => {
                       setPseudo(e.target.value);
                     }}
                   />
                 </div>
+                <div class="flex flex-wrap ">
+    
+    <div>
+                  <label
+                    for="password"
+                    class="block mb-2 -mx-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                   Stack
+                  </label>
+                  <input
+                    type="text"
+                    name="password"
+                    id="password"
+                    class="bg-indigo-50 -mx-2 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    required=""
+                    onChange={(e) => {
+                      setPseudo(e.target.value);
+                    }}
+                  />
+                </div>
+                <div>
+                  <label
+                    for="password"
+                    class="block mx-3 mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    years
+                  </label>
+                  <input
+                    type="text"
+                    name="password"
+                    id="password"
+                    class="bg-indigo-50 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    required=""
+                    onChange={(e) => {
+                      setPseudo(e.target.value);
+                    }}
+                  />
+                </div>
+     </div>
                 {/* <div>
                 <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
         <div class="flex flex-col items-center justify-center pt-5 pb-6">
@@ -191,13 +266,16 @@ const form = () => {
     </label>
                 </div> */}
                 <div className="App">
+                  
                   <input
                     type="file"
+                   
                     onChange={(event) => {
                       setImageUpload(event.target.files[0]);
                     }}
                   />
-                  <img src={imageUrls} />
+                  {/* <img src={imageUrls} /> */}
+                  <img class="w-10 h-10 rounded-full" src={imageUrls}  alt="Rounded avatar"></img>
                 </div>
                 <select
                   onChange={(e) => {
@@ -228,8 +306,8 @@ const form = () => {
 
                 <button onClick={uploadFile}>UPLOAD</button>
               </form>
-            </div>
-          </div>
+        
+        
         </div>
       </section>
 
