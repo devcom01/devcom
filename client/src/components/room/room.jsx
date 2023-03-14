@@ -12,6 +12,7 @@ const room = ({token,setToken}) => {
     useEffect(()=> {
 
             const participantConnected = participant => {
+              console.log(participant);
               setParticipants(prevParticipants => [...prevParticipants, participant]);
             };
             const participantDisconnected = participant => {
@@ -20,7 +21,7 @@ const room = ({token,setToken}) => {
               );
             };
             Video.connect(token, {
-              name: "intervie-roo"
+              name: "intervie-room0"
             }).then(room => {
               setRoom(room);
               room.on('participantConnected', participantConnected);

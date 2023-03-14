@@ -25,9 +25,9 @@ const Editor = () => {
 const [trynotrender,setaha]=useState("")
   useEffect(()=> {
     const firebaseConfig = {
-      apiKey:process.env.REACT_APP_SECRET_API,
-      authDomain:process.env. REACT_APP_SECRET_AUTH,
-      databaseURL:process.env.REACT_APP_SECRET_DBURL 
+      apiKey:"AIzaSyB1aklEDhy-3og-JfmWFcp4jOOzgMahH74",
+      authDomain:"firepad-32d5e.firebaseapp.com",
+      databaseURL:"firepad-32d5e-default-rtdb.firebaseio.com/"
       
     };
     if (!firebase.apps.length) {
