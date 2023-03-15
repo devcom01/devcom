@@ -1,0 +1,22 @@
+.devp__navbar{
+    padding:0 20px;
+    height: 7vh;
+    color: #fff;
+    background-color: #21212b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    .devp__navbar__left{
+        display: flex;
+        align-items:center ;
+        gap: 2px;
+    }
+    .devp__navbar__right{
+
+        display: flex;
+        gap: 10px;
+        align-items:center ;
+    }
+   
+}

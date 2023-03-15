@@ -1,18 +1,13 @@
 
 import Signin from "./vues/sign in/signin";
 import Signup from "./vues/sign up/signup";
-import Signupp from "./components/sign up/signuppp"
+import Signupcompany from "./vues/signupcompany/signup"
+import Signincompany from "./vues/signincompany/Signin"
 import Cv from "./vues/Cvgenerator/cv.jsx";
 import Dashboard from "./vues/Dashboard/Dashboard.jsx";
+import { Route, Routes } from "react-router-dom";
 
-import Stack from "./components/stackdeveloper/Stack.jsx"
-import Company from "./components/Company/Campany";
-
-import Offers from "./components/Company/Offers";
-import UpdateProfile from "./components/Company/Profile/UpdateProfile";
-import Joboffers from "./components/Company/Joboffers";
 import Companyprofile from "./components/Companyprofile/Campanyprofile"
-import EditProfile from "./components/Companyprofile/EditProfile"
 import Createprofile from "./components/Companyprofile/Createprofile";
 function App() {
   const logout = () => {
@@ -22,22 +17,21 @@ function App() {
   return (
 
     <div>
-      {/* <Signin/> */}
-      {/* // <button onClick ={logout}>logout </button>  */}
       
-      <Cv />
-     
-      {/* <Stack/> */}
-      {/* <Company/> */}
-      {/* <Offers/> */}
-     {/* <UpdateProfile/> */}
-      {/* <Dashboard/> */}
-      {/* <Signupp/> */}
-      {/* <Signup/> */}
-      {/* <Joboffers/> */}
-    {/* <Companyprofile/> */}
-    {/* <EditProfile/> */}
-    {/* <Createprofile/> */}
+      {/* // <button onClick ={logout}>logout </button>  */}
+
+    <Routes>
+    <Route path="*" element={ <Dashboard/>} />
+    <Route path="/company/signup" element={<Signupcompany/>} />
+    <Route path="/company/signin" element={<Signincompany/>} />
+    <Route path="/developer/signup" element={<Signup/>} />
+    <Route path="/developer/signin" element={<Signin/>} />
+    <Route path="/developer/cvgenerator" element={<Cv/>} />
+    <Route path="/company/profile" element={<Companyprofile/>} />
+    <Route path="/company/createprofile" element={<Createprofile/>} />
+    
+    
+    </Routes>
     </div>
 
   

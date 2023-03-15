@@ -1,5 +1,9 @@
 import React ,{useState}from 'react'
+import axios from "axios"
+import { useNavigate } from "react-router-dom";
+import "./company.css"
 
+// import campany from "../../assets/imgs/campany.jpeg"
 const Createprofile = () => {
 const [name,setName]=useState("")
 const [slogan,setSlogan]=useState("")
@@ -12,6 +16,21 @@ const [companysize,setCompanysize]=useState("")
 const [founded,setFounded]=useState("")
 const [About,setAbout]=useState("")
 const [Specialities,setSpecialities]=useState("")
+
+const navigate = useNavigate();
+
+const handleSubmit = () => {
+  axios
+    .post("http://localhost:3000/api/companies/add", {
+      name
+    })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
   return (
     <div>
          
@@ -37,22 +56,22 @@ const [Specialities,setSpecialities]=useState("")
            
             <div class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
               <div class="py-6 px-3 mt-32 sm:mt-0">
-                <button class="bg-pink-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150" type="button">
+                <button  onClick={() => handleSubmit()} class=" buttonsave inline-block w-96 justify-start rounded-lg hover:bg-gray-500 bg-black px-5 py-3 font-medium text-white sm:w-auto" type="button">
                   Save
                 </button>
               
                
-                <button class="bg-pink-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150" type="button">
-                  home
+                <button onClick={() => navigate('/company/profile')}class="buttonreturn inline-block w-96 justify-start rounded-lg hover:bg-gray-500 bg-black px-5 py-3 font-medium text-white sm:w-auto" type="button">
+                  Return
                 </button>
         
               </div>
             </div>
            
           </div>
-          <div class="text-start mt-12 flex flex-wrap justify-center">
+          {/* <div class="text-start mt-12 flex flex-wrap justify-center"> */}
             
-          <form >
+          {/* <form >
               <div>
                             <label
                                 htmlFor="name"
@@ -263,16 +282,166 @@ const [Specialities,setSpecialities]=useState("")
                         </div>
                        
                        
-                        </form>                        
+                        </form>                         */}
                                     
-        
+                                    
+
+      
+
+      
+        <form action="" class="space-y-4">
+          <div class="flex">
+          <div class="w-80">
+            <label class="sr-only" for="name">Name</label>
+            <input
+              class="w-full rounded-lg border-gray-200 p-3 text-sm"
+              placeholder="Name"
+              type="text"
+              id="name"
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+            />
           </div>
-          
-        </div>
+          <div class="w-80 mx-24">
+            <label class="sr-only" for="name">Slogan</label>
+            <input
+              class="w-full rounded-lg border-gray-200 p-3 text-sm"
+              placeholder="slogan"
+              type="text"
+              id="slogan"
+              onChange={(e) => {
+                setSlogan(e.target.value);
+              }}
+            />
+          </div>
+          <div class="w-80 mx-4" >
+            <label class="sr-only" for="name">Website</label>
+            <input
+              class="w-full rounded-lg border-gray-200 p-3 text-sm"
+              placeholder="website"
+              type="text"
+              id="website"
+              onChange={(e) => {
+                setWebsite(e.target.value);
+              }}
+            />
+          </div>
+          </div>
+          <div class="flex">
+          <div class="w-80">
+            <label class="sr-only" for="name">Phone</label>
+            <input
+              class="w-full rounded-lg border-gray-200 p-3 text-sm"
+              placeholder="Phone"
+              type="text"
+              id="Phone"
+              onChange={(e) => {
+                setPhone(e.target.value);
+              }}
+            />
+          </div>
+          <div class="w-80 mx-24">
+            <label class="sr-only" for="name">Email</label>
+            <input
+              class="w-full rounded-lg border-gray-200 p-3 text-sm"
+              placeholder="email"
+              type="email"
+              id="email"
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+            />
+          </div>
+          <div class="w-80 mx-4" >
+            <label class="sr-only" for="name">Adress</label>
+            <input
+              class="w-full rounded-lg border-gray-200 p-3 text-sm"
+              placeholder="Adress"
+              type="text"
+              id="Adress"
+              onChange={(e) => {
+                setAdress(e.target.value);
+              }}
+            />
+          </div>
+          </div>
+          <div class="flex">
+          <div class="w-80">
+            <label class="sr-only" for="name">Industry</label>
+            <input
+              class="w-full rounded-lg border-gray-200 p-3 text-sm"
+              placeholder="Industry"
+              type="text"
+              id="Industry"
+              onChange={(e) => {
+                setIndustry(e.target.value);
+              }}
+            />
+          </div>
+          <div class="w-80 mx-24">
+            <label class="sr-only" for="name">Company size</label>
+           <select id="Company size" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"onChange={(e) => {
+                                        setCompanysize(e.target.value);
+                                      }}>
+  <option selected>Choose a Company size</option>
+  <option value="Small">Small</option>
+  <option value="Small">Medium</option>
+  <option value="Small">Large</option>
+  <option value="Small">International</option>
+</select>
+          </div>
+          <div class="w-80 mx-4" >
+            <label class="sr-only" for="name">Founded</label>
+            <input
+              class="w-full rounded-lg border-gray-200 p-3 text-sm"
+              placeholder="Founded"
+              type="text"
+              id="Founded"
+              onChange={(e) => {
+                setFounded(e.target.value);
+              }}
+            />
+          </div>
+          </div>
+          <div class="flex">
+          <div class="w-80">
+          <div>
+            <label class="sr-only" for="message">About</label>
+
+            <textarea
+              class="w-full rounded-lg border-gray-200 p-3 text-sm"
+              placeholder="About"
+              rows="8"
+              id="About"
+              onChange={(e) => {
+                setAbout(e.target.value);
+              }}
+            ></textarea>
+          </div>
+          </div>
+          <div class="w-80 mx-40">
+          <div>
+            <label class="sr-only" for="message">Specialities</label>
+
+            <textarea
+              class="w-full rounded-lg border-gray-200 p-3 text-sm"
+              placeholder="Specialities"
+              rows="8"
+              id="Specialities"
+              onChange={(e) => {
+                setSpecialities(e.target.value);
+              }}
+            ></textarea>
+          </div>
+          </div>
+         
+          </div>
+  </form>
       </div>
     </div>
-
-  </section>
+  </div>
+</section>
 </main>
     </div>
   )
