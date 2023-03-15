@@ -23,7 +23,7 @@ module.exports = {
     },
     //based on stack,experience and developers availability
     getMatchingCompanies: () => {
-        console.log("selectingCompany");
+      
         let sql = `SELECT developers.tech_stack,job_offer.tech_stack ,developers.firebase_id,companies_company_firebase_id
         FROM developers
         ,job_offer
