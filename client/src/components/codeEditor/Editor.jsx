@@ -25,9 +25,11 @@ const Editor = () => {
 const [trynotrender,setaha]=useState("")
   useEffect(()=> {
     const firebaseConfig = {
+
       apiKey:proces.env.apikey,
       authDomain:process.env.auth,
       databaseURL:process.env.url
+
       
     };
     if (!firebase.apps.length) {

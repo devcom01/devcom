@@ -69,6 +69,7 @@ useEffect(()=>{
       headers: {
         "X-RapidAPI-Host": process.env.host,
         "X-RapidAPI-Key": process.env.key,
+
       },
     };
     try {
@@ -109,8 +110,10 @@ useEffect(()=>{
       headers: {
         "content-type": "application/json",
         "Content-Type": "application/json",
+
         "X-RapidAPI-Host": process.env.judgehost,
         "X-RapidAPI-Key": process.env.judgekey,
+
       },
       data: formData,
     };

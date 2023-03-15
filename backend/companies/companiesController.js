@@ -32,9 +32,12 @@ exports.getAllMatching = (async (req, res) => {
         res.status(500).json(err)
     }
 })
+
+
 exports.addcompany = (async (req, res) => {
     let id = req.body.id
     let email = req.body.email
+   
     try {
         let newcompany = await addNewCompany(id, email)
         res.status(200).json(newcompany)

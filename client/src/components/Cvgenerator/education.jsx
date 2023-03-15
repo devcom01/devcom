@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import bg from "../../assets/imgs/bg.jpg";
+//import bg from "../../assets/imgs/bg.jpg";
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/datepicker.min.js"></script>;
 const education = ({ seteducations }) => {

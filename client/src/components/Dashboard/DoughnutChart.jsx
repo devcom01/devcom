@@ -7,8 +7,11 @@ const DoughnutChart = () => {
           {
             label: "My First Dataset",
             data: [300, 50, 100],
-            backgroundColor: ["#2bb66b", "#ff8131", "#ffe702"],
-            hoverOffset: 4,
+            backgroundColor: [
+              "rgb(133, 105, 241)",
+              "rgb(164, 101, 241)",
+              "rgb(101, 143, 241)",
+            ],hoverOffset: 4,
           },
         ],
       };

@@ -29,17 +29,18 @@ const experience = ({ setexperiences }) => {
                       setjob(e.target.value);
                     }}
                   />
+                  
                 </div>
               </div>
-              <div className="flex text-white">
-                <label for="date" class="mb-2 text-sm font-medium text-white dark:text-white">Select a date:</label>
+              <div className="flex text-gray-900">
+                <label for="date" class="mb-2 text-sm font-medium text-white dark:text-white">start:</label>
 <input id="date" type="date" value={dates} class="border border-gray-400 p-2 rounded-md " 
 onChange={(e) => {
   setdates(e.target.value)
 }}></input></div>
-<div className="flex">
-                <label for="date" class="mb-2 text-sm font-medium text-white dark:text-white">Select a date:</label>
-<input id="datef" type="datef" value={datef} class="border border-gray-400 p-2 rounded-md " 
+<div className="flex text-gray-900">
+                <label for="date" class="mb-2 text-sm font-medium text-white dark:text-white">end:</label>
+<input id="datef" type="date" value={datef} class="border border-gray-400 p-2 rounded-md " 
 onChange={(e) => {
   setdatef(e.target.value)
 }}></input></div>
@@ -63,11 +64,12 @@ onChange={(e) => {
               onClick={(e) => {
                 setexperiences((experiences) => [
                   ...experiences,
-                  { job, about,dates },
+                  { job, about,dates,datef },
                 ]);
                 setabout("");
                 setjob("");
                 setdates("");
+                setdatef("");
               }}
             >
               aaa
