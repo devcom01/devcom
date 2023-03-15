@@ -20,6 +20,7 @@ const toyproblems = () => {
   const [status,setstatus] =useState(null)
   const [memory,setmemory] =useState(null)
   const [stop,setstop] = useState(false)
+  const [language,setlanguage]=useState("javascript")
 
 
   useEffect(() => {
@@ -42,7 +43,10 @@ const toyproblems = () => {
       setstop(true)
     }, 1000*10)
   },[status])
-
+useEffect(()=>{
+  setlanguage(languageRef.current.options[languageRef.current.selectedIndex].id)
+  console.log(languageRef.current.options[languageRef.current.selectedIndex].id);
+},[languageRef.current?.options[languageRef.current.selectedIndex].id])
    const handleeditor = (value) => {
     handlechange("code", value);
   };
@@ -198,12 +202,12 @@ const toyproblems = () => {
                 {languages.map((language) => {
                   if (language.name === "JavaScript (Node.js 12.14.0)") {
                     return (
-                      <option value={language.id} selected>
+                      <option value={language.id} id={language.value} selected>
                         {language.name}
                       </option>
                     );
                   } else {
-                    return <option value={language.id}>{language.name}</option>;
+                    return <option id={language.value} value={language.id}>{language.name}</option>;
                   }
                 })}
               </select>
@@ -253,7 +257,7 @@ const toyproblems = () => {
                 height="71vh"
                 width="96.4%"
                 theme="vs-dark"
-                language="javascript"
+                language={language}
                 value={defaultvalue}
                 onChange={handleeditor}
               />
