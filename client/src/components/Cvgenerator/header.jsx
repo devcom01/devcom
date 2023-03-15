@@ -1,5 +1,5 @@
 import React from 'react'
-import bg from "../../assets/imgs/bg.jpg"
+import bg2 from "../../assets/imgs/bg2.jpg"
 import face from "../../assets/imgs/face-2.png"
 import Typewriter from "typewriter-effect";
 const header = () => {

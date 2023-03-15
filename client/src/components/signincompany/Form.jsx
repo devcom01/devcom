@@ -4,22 +4,12 @@ import { signInWithPopup } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import "../sign in/form.css"
-const form = () => {
+const Form = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [value, setValue] = useState("");
-  const [git, setGit] = useState("");
   const navigate = useNavigate();
-  //     const {googleSignIn}=UserAuth()
 
-  //     const handleGoogleSignIn=async()=>{
-  //     try{
-  //     await googleSignIn();
-
-  //     }catch(error){
-  // console.log(error)
-  //     }
-  // }
 
   const handleClick = () => {
     signInWithPopup(auth, provider).then((data) => {
@@ -36,9 +26,7 @@ const form = () => {
       localStorage.setItem("email", data.user.email);
     });
   };
-  useEffect(() => {
-    setGit(localStorage.getItem("email"));
-  });
+
 
   const signIn = (e) => {
     e.preventDefault();
@@ -104,28 +92,13 @@ const form = () => {
                 >
                   Sign in
                 </button>
-                <button
-                  type="submit"
-                  class="w-full mt-7 text-white buttonu focus:ring-4 hover:bg-gray-600 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600
-                  dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                  onClick={handleClick}
-                >
-                  
-                  google
-                </button>
-                <button
-                  type="submit"
-                  class="w-full mt-7 text-white buttonu focus:ring-4 hover:bg-gray-600 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600
-                  dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                  onClick={handleClickg}
-                >
-                  git
-                </button>
+                
+               
 
                 <p class=" mt-7 text-sm font-light text-gray-500 dark:text-gray-400">
                   Dont have an account yet?{" "}
                   <a
-                   onClick={() => navigate('/developer/signup')}
+                    onClick={() => navigate('/company/signup')}
                     class="font-medium text-red-800 hover:underline dark:text-primary-500"
                   >
                     Sign up
@@ -140,4 +113,4 @@ const form = () => {
   );
 };
 
-export default form;
+export default Form;

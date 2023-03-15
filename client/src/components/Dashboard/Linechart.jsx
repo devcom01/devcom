@@ -9,7 +9,8 @@ const Linechart = () => {
             label: 'Sales',
             data: [12, 19, 3, 5, 2, 3],
             fill: false,
-            borderColor:"#2bb66b",
+            borderColor:"#5b6fde",
+      
             tension: 0.1,
           },
         ],
