@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
-import {Avatar} from '@mui/material'
-import {IoIosExit} from  'react-icons/io'
+import {Avatar, Button, Input, Modal, TextareaAutosize, Typography} from '@mui/material'
+import {ImShrink2} from  'react-icons/im'
+import { Box } from '@mui/system'
+import DateTimePicker from 'react-datetime-picker';
+
+
 const ListingAll = () => {
+  const [open,setopen]=useState(false)
     const [view,setView]=useState(
         {class:"container",
         mainClass:"listing__mainsection",
@@ -15,8 +20,7 @@ const ListingAll = () => {
     <div className="listing__listingAll">
       <h3>Showing n jobs</h3>
       <div className={view.mainClass} >
-    <div className={view.class} onClick={e=>setView( view =>  {
-        if (view.class =="container") { return {mainClass:"listing__mainsection flex" ,class:view.class+"short" , selected:true , selectedItem:{}} } else {return {mainClass:"listing__mainsection",class:"container" , selected:false,selectedItem:null}} } )}>
+    <div className={view.class} >
     <Avatar sx={{ bgcolor: 'green' , transform:'scale(1.2)' }} variant="rounded">
  H
 </Avatar>
@@ -28,11 +32,11 @@ const ListingAll = () => {
 <p >Min 1 yearExp</p>
 <p >senior level</p>
 </div>
-<button>Apply now </button>
+<button  style={{cursor:"pointer"} } onClick={e=>setView( view =>  {
+        if (view.class =="container") { return {mainClass:"listing__mainsection flex" ,class:view.class+"short" , selected:true , selectedItem:{}} } else {return {mainClass:"listing__mainsection",class:"container" , selected:false,selectedItem:null}} } )}>See more </button>
 </div>
     </div>
-    <div className={view.class} onClick={e=>setView( view =>  {
-        if (view.class =="container") { return {mainClass:"listing__mainsection flex" ,class:view.class+"short" , selected:true , selectedItem:{}} } else {return {mainClass:"listing__mainsection",class:"container" , selected:false,selectedItem:null}} } )}>
+    <div className={view.class} >
     <Avatar sx={{ bgcolor: 'green' , transform:'scale(1.2)' }} variant="rounded">
  H
 </Avatar>
@@ -44,11 +48,10 @@ const ListingAll = () => {
 <p >Min 1 yearExp</p>
 <p >senior level</p>
 </div>
-<button>Apply now </button>
+<button onClick={e=>setView( view =>  {
+        if (view.class =="container") { return {mainClass:"listing__mainsection flex" ,class:view.class+"short" , selected:true , selectedItem:{}} } else {return {mainClass:"listing__mainsection",class:"container" , selected:false,selectedItem:null}} } )}>See more </button>
 </div>
-    </div>
-    <div className={view.class} onClick={e=>setView( view =>  {
-        if (view.class =="container") { return {mainClass:"listing__mainsection flex" ,class:view.class+"short" , selected:true , selectedItem:{}} } else {return {mainClass:"listing__mainsection",class:"container" , selected:false,selectedItem:null}} } )}>
+    </div>    <div className={view.class} >
     <Avatar sx={{ bgcolor: 'green' , transform:'scale(1.2)' }} variant="rounded">
  H
 </Avatar>
@@ -60,12 +63,10 @@ const ListingAll = () => {
 <p >Min 1 yearExp</p>
 <p >senior level</p>
 </div>
-<button>Apply now </button>
+<button onClick={e=>setView( view =>  {
+        if (view.class =="container") { return {mainClass:"listing__mainsection flex" ,class:view.class+"short" , selected:true , selectedItem:{}} } else {return {mainClass:"listing__mainsection",class:"container" , selected:false,selectedItem:null}} } )}>See more </button>
 </div>
-    </div>
-   
-    <div className={view.class} onClick={e=>setView( view =>  {
-        if (view.class =="container") { return {mainClass:"listing__mainsection flex" ,class:view.class+"short" , selected:true , selectedItem:{}} } else {return {mainClass:"listing__mainsection",class:"container" , selected:false,selectedItem:null}} } )}>
+    </div>    <div className={view.class} >
     <Avatar sx={{ bgcolor: 'green' , transform:'scale(1.2)' }} variant="rounded">
  H
 </Avatar>
@@ -77,24 +78,8 @@ const ListingAll = () => {
 <p >Min 1 yearExp</p>
 <p >senior level</p>
 </div>
-<button>Apply now </button>
-</div>
-    </div>
-    
-    <div className={view.class} onClick={e=>setView( view =>  {
-        if (view.class =="container") { return {mainClass:"listing__mainsection flex" ,class:view.class+"short" , selected:true , selectedItem:{}} } else {return {mainClass:"listing__mainsection",class:"container" , selected:false,selectedItem:null}} } )}>
-    <Avatar sx={{ bgcolor: 'green' , transform:'scale(1.2)' }} variant="rounded">
- H
-</Avatar>
-<div className="listing__info">
-<h4>title of ad</h4>
-<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem voluptatibus illo consequatur perspiciatis? Quaerat,</p>
-<div className="short_keywords">
-<p >Full time </p>
-<p >Min 1 yearExp</p>
-<p >senior level</p>
-</div>
-<button>Apply now </button>
+<button onClick={e=>setView( view =>  {
+        if (view.class =="container") { return {mainClass:"listing__mainsection flex" ,class:view.class+"short" , selected:true , selectedItem:{}} } else {return {mainClass:"listing__mainsection",class:"container" , selected:false,selectedItem:null}} } )}>See more </button>
 </div>
     </div>
     
@@ -103,9 +88,6 @@ const ListingAll = () => {
       </div>
  {view.selected &&
 <div className="specific__offer">
-  
-<IoIosExit onClick= {e=>{setView( view =>  {
-        if (view.class =="container") { return {mainClass:"listing__mainsection flex" ,class:view.class+"short" , selected:true , selectedItem:{}} } else {return {mainClass:"listing__mainsection",class:"container" , selected:false,selectedItem:null}} } )}} style={{position:"absolute" ,scale:'2', zIndex:"6",color:"#0062ff"}}/>
   <div className="cover"  style={{"--bg-image": "url('https://wallpaperset.com/w/full/6/d/c/87298.jpg')"}} >
     <Avatar sx={{ bgcolor: 'green' ,  border:"2px solid #fff", scale:'2' ,  position:"absolute" , zIndex:"5",bottom:"20px",left:"10%" }} variant="rounded">
  H
@@ -138,7 +120,7 @@ const ListingAll = () => {
       </div>
     </div>
     <div className="overview">
-      <h2>overview :</h2>
+      <h2>overview :</h2>onClick
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo autem molestiae quaerat aperiam facilis dicta minus quod nesciunt odio? Sequi fugit molestias atque eum vitae labore nisi maiores minima nostrum?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam voluptate tempora dicta culpa magni esse id consequatur accusantium quam! Nihil recusandae saepe neque labore, repellat beatae doloremque ducimus libero voluptates?</p>
     </div>
 <div className="description">
@@ -146,7 +128,28 @@ const ListingAll = () => {
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo autem molestiae quaerat aperiam facilis dicta minus quod nesciunt odio? Sequi fugit molestias atque eum vitae labore nisi maiores minima nostrum?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam voluptate tempora dicta culpa magni esse id consequatur accusantium quam! Nihil recusandae saepe neque labore, repellat beatae doloremque ducimus libero voluptates?</p>
  
 </div>
-    
+<div className="offer_infos__buttons">
+  <button style={{cursor:"pointer"}} onClick={e=>setopen(true)}>Apply now</button>
+</div>
+<ImShrink2 style={{cursor:"pointer"}} onClick={e=>setView( view =>  {
+        if (view.class =="container") { return {mainClass:"listing__mainsection flex" ,class:view.class+"short" , selected:true , selectedItem:{}} } else {return {mainClass:"listing__mainsection",class:"container" , selected:false,selectedItem:null}} } )}/>
+    <Modal
+  open={open}
+  onClose={e=>setopen(false)}
+  aria-labelledby="modal-modal-title"
+  aria-describedby="modal-modal-description"
+>
+  <Box sx={{background:"#fff",margin:"150px",height:"50vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",color:"#fff"}}>
+    <Typography id="modal-modal-title" color="#000" variant="h5" component="h2">
+      Please submit your cover letter
+    </Typography>
+    <TextareaAutosize style={{padding:"10px",width:"500px",height:"150px",color:"#000"}}></TextareaAutosize>
+    <Typography color="#000" variant="h5" component="h2">Chose a date for an online interview</Typography>
+    <DateTimePicker />
+    <Button onClick={e=>setopen(false)}>Submit now </Button>
+  </Box>
+</Modal>
+
   </div>
 </div>}
     </div>
