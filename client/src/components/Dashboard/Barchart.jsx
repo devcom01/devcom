@@ -31,10 +31,10 @@ const Barchart = () => {
             data: [12,1, 3, 5, 2, 3, 7],
             backgroundColor: [
 
-              "#ffcf5c"
+            "#5b6fde"
             ],
             borderColor: [
-              "#ffcf5c"
+              "#5b6fde"
             ],
             borderWidth: 1,
           },
