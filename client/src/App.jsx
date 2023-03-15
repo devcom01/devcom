@@ -1,4 +1,5 @@
 
+
 import Signin from "./vues/sign in/signin";
 import Signup from "./vues/sign up/signup";
 import Signupcompany from "./vues/signupcompany/signup"
@@ -37,7 +38,6 @@ function App() {
   
       
 
-  );
-}
+  )}
 
 export default App;

@@ -67,8 +67,9 @@ useEffect(()=>{
       url: 'https://judge0-ce.p.rapidapi.com/submissions/'+token,
       params: { base64_encoded: "true", fields: "*" },
       headers: {
-        "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com",
-        "X-RapidAPI-Key": "d99009bfd4mshce3689b0f908b24p1fac34jsn19b8bdf15c45",
+        "X-RapidAPI-Host": process.env.host,
+        "X-RapidAPI-Key": process.env.key,
+
       },
     };
     try {
@@ -109,8 +110,10 @@ useEffect(()=>{
       headers: {
         "content-type": "application/json",
         "Content-Type": "application/json",
-        "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com",
-        "X-RapidAPI-Key": "d99009bfd4mshce3689b0f908b24p1fac34jsn19b8bdf15c45",
+
+        "X-RapidAPI-Host": process.env.judgehost,
+        "X-RapidAPI-Key": process.env.judgekey,
+
       },
       data: formData,
     };
