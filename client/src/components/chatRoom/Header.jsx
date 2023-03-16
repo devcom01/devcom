@@ -4,7 +4,7 @@ import coverPhoto from "../../assets/imgs/coverfinal.png"
 const Header = ({fetchUser}) => {
   return (
     <div className='header_wrap'>
-        <div className='cover'> 
+        <div className='cover_chatroom'> 
           <img src={coverPhoto} alt="Cover" />
           </div>
           <div className='profil_chat'>

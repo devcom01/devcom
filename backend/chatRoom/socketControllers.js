@@ -11,8 +11,9 @@ const io = require("socket.io")();
 io.on("connection", (socket) => {
   // console.log(socket.id);
   socket.on("joinRoom", (data) => {
-    // console.log(data);
+    console.log(data);
     socket.join(data.room);
+    // io.to(data.room).emit('messagejoin', `${data.name}, ${data.lastname} joined the room`)
     // console.log(socket.rooms);
 
     // socket.emit("joinedRoom",socket.id)

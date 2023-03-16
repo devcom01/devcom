@@ -14,7 +14,8 @@ const ChatRoom = ({
   refresh,
   sendMessage,
   setRefresh,
-  received
+  received,
+  sentmessage
 }) => {
   const [connectedUser, setConnectedUser] = useState([]);
   const [message, setMessage] = useState("");
@@ -30,8 +31,8 @@ const ChatRoom = ({
     // });
 
     getconnecteted();
-  }, [received])
-  console.log("message",received);
+  }, [sentmessage])
+  // console.log("message",received);
  
   const getconnecteted = async () => {
     try {
@@ -80,7 +81,7 @@ const ChatRoom = ({
 
         <div className="messages_global">
           <h2>Messages</h2>
-          <ChatContainer received={received} oneStack={oneStack}/>
+          <ChatContainer received={received} oneStack={oneStack} sentmessage={sentmessage}/>
 
           <div className="input">
             <input

@@ -2,7 +2,7 @@
   font-family: "Fira Code";
   src: url("../node_modules/firacode/FiraCode-Regular.ttf") format("truetype");
 }
-.cover img {
+.cover_chatroom img {
     width : 100%;
 
 }
@@ -41,7 +41,7 @@ h1{
   }
 }
 
-.button {
+.button_stack {
 
   display: flex;
   flex-direction: row;
@@ -77,7 +77,7 @@ h1{
 }
 
 .button_st button:hover {
-  background-color: #ff002a;
+  background-color: #234b8e;
   cursor: pointer;
 }
 
@@ -121,7 +121,7 @@ h1{
     left: 129px;
     color: wheat;
     border-radius: 20px;
-    border:3px solid #ff002a;
+    border:3px solid #234b8e;
     margin: 20px;
     opacity: 0.8;
 }
@@ -164,7 +164,7 @@ h1{
 }
 
 .profil_chat {
-  border: #ff002a;
+  border: #234b8e;
   border-radius: 40px;
   background-color: black;
   height: 183px;
@@ -191,7 +191,7 @@ h1{
   height: auto;
   max-width: 150px;
   margin-left: 30px;
-  border: #ff002a;
+  border:#234b8e;
   border-radius: 50px;
   
 }
@@ -235,7 +235,7 @@ h1{
     width: 1131px;
 }
 
-.text {
+.text_message {
   margin-left: 50px;
   font-size: 16px;
   color: #ffffff;

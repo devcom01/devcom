@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+.signup__select {
+    font-family: 'Press Start 2P', cursive;
+    background:#000;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    cursor:none;
+    justify-content: center;
+ 
+   
+   .cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    opacity: 0.8;
+    background-image: url("../../assets/imgs/cursor.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+   }
+   
+   
+   
+    .text{
+        font-size: 29px;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        p:nth-child(1){
+        align-self: flex-start;
+        color: #c1265c;
+    }
+    p:nth-child(2){
+        color : #2e9795
+       
+    }
+    p:nth-child(3){
+        color:#fff
+    }
+    p:nth-child(4){
+        
+        color : #2e9795
+       
+    }
+}
+.choices{
+    display: flex;
+    gap: 100px;
+    margin: 50px;
+
+    button{
+        background: hsl(0, 2%, 12%);
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        color: white;
+        padding: .7em 3em;
+        border: none;
+        border-radius: 1em;
+        font-size: 2em;
+        text-transform: uppercase;
+        letter-spacing: .15em;
+        outline: none;
+        font-weight: 900;
+        cursor: pointer;
+        transition: all .5s cubic-bezier(0.215, 0.61, 0.355, 1);;
+        font-family: ‘Oswald’, sans-serif;
+        text-shadow:  0 1px hsl(0, 0%, 80%),
+              0 2px hsl(0, 0%, 78%),
+              0 3px hsl(0, 0%, 75%),
+              0 3px 5px hsl(0, 0%, 0%, .4),
+              0 4px 20px hsl(0, 0%, 0%, .35);
+        box-shadow: 0 1px hsl(0, 0%, 18%),
+          0 2px hsl(0, 0%, 33%),
+          0 3px hsl(0, 0%, 33%),
+          0 4px hsl(0, 0%, 33%),
+          0 5px hsl(0, 0%, 33%),
+          0 6px hsl(0, 0%, 33%),
+          0 7px hsl(0, 0%, 33%),
+          0 8px hsl(0, 0%, 33%),
+          0 9px hsl(0, 0%, 33%),
+          0 10px hsl(0, 0%, 33%),
+          0 11px hsl(0, 0%, 33%),
+          0 12px hsl(0, 0%, 33%),
+          0 13px hsl(0, 0%, 33%),
+              0 14px hsl(0, 0%, 33%),
+          0 15px hsl(0, 0%, 33%),
+          0 16px hsl(0, 0%, 33%),
+          0 17px hsl(0, 0%, 33%),
+          0 18px hsl(0, 0%, 33%),
+          0 19px hsl(0, 0%, 33%),
+          0 20px hsl(0, 0%, 33%),
+          0 21px hsl(0, 0%, 33%),
+          0 22px hsl(0, 0%, 33%),
+          0 23px hsl(0, 0%, 33%),
+          0 23px 10px hsla(0, 0%, 0%, .8),
+          0 25px 50px hsla(0, 0%, 0%, .5)
+    }
+    button:hover {
+       
+            background: hsl(0, 100%, 72%);
+            box-shadow: none;
+            text-shadow: none;
+            transform: translateY(25px);
+        
+    }
+}
+}

@@ -1,18 +1,21 @@
-const { addNewDeveloper, addnewstack,getOneDev, getAlldevelopers, getSpecificDevelopers, getAllMatchingdevelopers, getMatchingdevelopersbasedonDescription,getMatchingSystem } = require("./devModel")
+
+const {getOneDev, addNewDeveloper, addnewstack, getAlldevelopers, getSpecificDevelopers, getAllMatchingdevelopers,getDevelopersBasedonRank, getMatchingdevelopersbasedonDescription,getMatchingSystem,getAllJobOffers,getMatchingJobOffers } = require("./devModel")
+
 
 
 exports.addDeveloper = (async (req, res) => {
     let id = req.body.id
     let email = req.body.email
     let pseudo = req.body.pseudo
+    let image_url=req.body.image_url
     let position = req.body.position
     let stack = req.body.stack
     let experience = req.body.experience
     let description = req.body.description
     let url = req.body.url
-
+    let role =req.body.role
     try {
-        let newdev = await addNewDeveloper(id, email, pseudo, position, stack, experience, description, url)
+        let newdev = await addNewDeveloper(id, email, pseudo,role, position, stack, experience, description, url,image_url)
         res.status(200).json(newdev)
     }
     catch (err) {
@@ -56,7 +59,37 @@ exports.getSpecific = (async (req, res) => {
 
     }
 })
+exports.getMatchingOffers=(async(req,res) => {
+    try{
+        let [matchy]=await getMatchingJobOffers()
+    res.status(200).json(matchy)
+    }
+    catch (err) {
+        res.status(500).send(err)
+    }
 
+})
+
+
+exports.getDevelopersbyRank = (async (req, res)=>{
+    let rank=req.params.rank
+    try{
+        let ranked=await getDevelopersBasedonRank(rank)
+        res.status(201).json(ranked[0])
+    }
+    catch(err){
+        res.status(500).json(err)
+    }
+})
+exports.getJobOffers=(async (req, res)=>{
+    try{
+        let jobOffers=await getAllJobOffers()
+        res.status(201).json(jobOffers[0])
+    }
+    catch(err){
+        res.status(500).json(err)
+    }
+})
 exports.getAllMatching = (async (req, res) => {
     try {
         let matchy = await getAllMatchingdevelopers()
@@ -89,8 +122,8 @@ catch(err){
 }
 })
 
-exports.getOneDev=(async(req,res)=>{
-    let dev = req.params['id']
+exports.getOne=(async(req,res)=>{
+    let dev = req.params.id
     console.log(dev);
 
     try{
@@ -98,7 +131,7 @@ exports.getOneDev=(async(req,res)=>{
         res.status(200).json(one[0])
     }
     catch (err) {
-        res.status(500).json(err)
+        res.status(500).send(err)
     }
 })
 

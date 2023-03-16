@@ -32,12 +32,13 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 -- Table `final`.`developers`
 -- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `final`.`developers` (
   `firebase_id` VARCHAR(100) NOT NULL,
   `developer_email` VARCHAR(60) NOT NULL,
+  `first_name` VARCHAR(45) NOT NULL,
+  `last_name` VARCHAR(45) NOT NULL,
   `pseudo` VARCHAR(45) NOT NULL,
-  `first_name` VARCHAR(50) NOT NULL,
-  `last_name` VARCHAR(50) NOT NULL,
   `points` INT NOT NULL DEFAULT '0',
   `xp` INT NOT NULL DEFAULT '0',
   `rank` INT NOT NULL DEFAULT '10',
@@ -45,9 +46,11 @@ CREATE TABLE IF NOT EXISTS `final`.`developers` (
   `tech_stack` JSON NOT NULL,
   `description` VARCHAR(300) NOT NULL,
   `available` TINYINT NULL DEFAULT NULL,
-  `cv` JSON NULL DEFAULT NULL,
+  `cv` VARCHAR(100) NULL DEFAULT NULL,
   `role` VARCHAR(20) NOT NULL,
+  `image_url` VARCHAR(100) NULL DEFAULT NULL,
   PRIMARY KEY (`firebase_id`))
+>>>>>>> edf1d31469651a1faca675c001e566a37acc3530
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
@@ -96,7 +99,14 @@ COLLATE = utf8mb4_0900_ai_ci;
 CREATE TABLE IF NOT EXISTS `final`.`companies` (
   `company_firebase_id` VARCHAR(100) NOT NULL,
   `company_email` VARCHAR(100) NOT NULL,
-  PRIMARY KEY (`company_firebase_id`))
+  `tax_identification_number` VARCHAR(25) NULL DEFAULT NULL,
+  `verified` TINYINT NULL DEFAULT '0',
+  `company_name` VARCHAR(20) NULL DEFAULT NULL,
+  `company_introduction` TEXT NULL,
+  `company_field` VARCHAR(45) NULL,
+  `company_size` ENUM("Small", "Medium", "Large", "International") NULL,
+  PRIMARY KEY (`company_firebase_id`),
+  UNIQUE INDEX `tax_identification_number` (`tax_identification_number` ASC) VISIBLE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
@@ -105,6 +115,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 -- Table `final`.`conversations`
 -- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `final`.`conversations` (
   `conversation_id` INT NOT NULL AUTO_INCREMENT,
   `message` VARCHAR(405) NULL DEFAULT NULL,
@@ -120,9 +131,8 @@ CREATE TABLE IF NOT EXISTS `final`.`conversations` (
   CONSTRAINT `fk_conversations_rooms1`
     FOREIGN KEY (`rooms_room_id`)
     REFERENCES `final`.`rooms` (`room_id`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+
+
 
 
 -- -----------------------------------------------------
@@ -155,6 +165,7 @@ CREATE TABLE IF NOT EXISTS `final`.`matching` (
   `matching_stack` JSON NOT NULL,
   `job_offer_idrequirements` INT NOT NULL,
   `developers_firebase_id` VARCHAR(100) NOT NULL,
+  `company_id` VARCHAR(20) NULL DEFAULT NULL,
   PRIMARY KEY (`idmatching`),
   INDEX `fk_matching_job_offer1_idx` (`job_offer_idrequirements` ASC) VISIBLE,
   INDEX `fk_matching_developers1_idx` (`developers_firebase_id` ASC) VISIBLE,
@@ -182,7 +193,9 @@ CREATE TABLE IF NOT EXISTS `final`.`interview` (
   INDEX `fk_interview_matching1_idx` (`matching_idmatching` ASC) VISIBLE,
   CONSTRAINT `fk_interview_matching1`
     FOREIGN KEY (`matching_idmatching`)
-    REFERENCES `final`.`matching` (`idmatching`))
+    REFERENCES `final`.`matching` (`idmatching`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
@@ -224,6 +237,52 @@ CREATE TABLE IF NOT EXISTS `final`.`solve` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `final`.`job_application`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `final`.`job_application` (
+  `application_id` INT NOT NULL AUTO_INCREMENT,
+  `developers_firebase_id` VARCHAR(100) NOT NULL,
+  `job_offer_job_offer_id` INT NOT NULL,
+  `status` ENUM("Pending", "Accepted", "Rejected", "Interview scheduled") NULL,
+  `cover_letter` TEXT NULL,
+  `application_date` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `resume_url` VARCHAR(100) NULL,
+  PRIMARY KEY (`application_id`),
+  INDEX `fk_job_application_developers1_idx` (`developers_firebase_id` ASC) VISIBLE,
+  INDEX `fk_job_application_job_offer1_idx` (`job_offer_job_offer_id` ASC) VISIBLE,
+  CONSTRAINT `fk_job_application_developers1`
+    FOREIGN KEY (`developers_firebase_id`)
+    REFERENCES `final`.`developers` (`firebase_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_job_application_job_offer1`
+    FOREIGN KEY (`job_offer_job_offer_id`)
+    REFERENCES `final`.`job_offer` (`job_offer_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `final`.`company_availability`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `final`.`company_availability` (
+  `schedule_id` INT NOT NULL AUTO_INCREMENT,
+  `day_of_week` ENUM('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday') NULL,
+  `start_time` TIME NULL,
+  `end_time` TIME NULL,
+  `companies_company_firebase_id` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`schedule_id`),
+  INDEX `fk_company_availability_companies1_idx` (`companies_company_firebase_id` ASC) VISIBLE,
+  CONSTRAINT `fk_company_availability_companies1`
+    FOREIGN KEY (`companies_company_firebase_id`)
+    REFERENCES `final`.`companies` (`company_firebase_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

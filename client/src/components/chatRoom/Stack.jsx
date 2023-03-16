@@ -5,6 +5,7 @@ import ChatRoom from "./ChatRoom.jsx";
 import "./Chatroom.css";
 import io from "socket.io-client";
 
+
 let socket;
 const CONNECTION_PORT = "http://127.0.0.1:3000";
 const Stack = ({ fetchUser }) => {
@@ -14,6 +15,7 @@ const Stack = ({ fetchUser }) => {
   const [roomName, setRoomName] = useState("");
   const [refresh, setRefresh] = useState(false);
   const [received, setReceived] = useState([]);
+  const [sentmessage,setSentMessage]=useState([])
 
 
   // console.log(oneStack);
@@ -32,6 +34,10 @@ const Stack = ({ fetchUser }) => {
         
         
       });
+      // socket.on("messagejoin", data=>{
+      //   console.log("bienvenu",data);
+      //   setReceived((received)=>[...received,data])
+      // })
       const getStack = async () => {
         try {
           const stack = await axios.get(
@@ -49,7 +55,7 @@ const Stack = ({ fetchUser }) => {
       return () => clearInterval(interval);
     
    
-  }, [received]);
+  }, []);
   
   // useEffect(() => {
     
@@ -67,8 +73,12 @@ const Stack = ({ fetchUser }) => {
     let userRoom = {
       room: oneStack.room_id,
       id: fetchUser[0].firebase_id,
+      name: fetchUser[0].first_name,
+      lastname : fetchUser[0].last_name
+
     };
-    console.log(userRoom);
+    // console.log(userRoom);
+    // console.log("=================>alo alo",fetchUser[0]);
     socket.emit("joinRoom", userRoom);
     setLogged(!logged);
   };
@@ -82,7 +92,8 @@ const Stack = ({ fetchUser }) => {
       messages: message,
     };
     socket.emit("sendmessage", userMessage)
-    // setReceived([...received,userMessage])
+    // setReceived([...received,message])
+    setSentMessage(sentmessage=>[...sentmessage, userMessage])
     setRefresh(!refresh)
   };
  
@@ -93,13 +104,13 @@ const Stack = ({ fetchUser }) => {
 
   return (
     <div>
-            {console.log("aa", received)}
+            {/* {console.log("aa", received)} */}
 
       {logged ? (
         <div className="button_wrapper">
           <div>
             <h1 id="choiceroom">"Choose the room you want to join."</h1>
-            <div className="button">
+            <div className="button_stack">
               {stacks.map((ele, idx) => {
                 return (
                   <div className="button_st" key={idx}>
@@ -153,6 +164,7 @@ const Stack = ({ fetchUser }) => {
           setRefresh={setRefresh}
           sendMessage={sendMessage}
           received={received}
+          sentmessage={sentmessage}
         />
       )}
     </div>

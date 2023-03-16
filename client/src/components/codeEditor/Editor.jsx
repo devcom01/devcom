@@ -25,10 +25,12 @@ const Editor = () => {
 const [trynotrender,setaha]=useState("")
   useEffect(()=> {
     const firebaseConfig = {
-      apiKey:process.env.REACT_APP_SECRET_API,
-      authDomain:process.env. REACT_APP_SECRET_AUTH,
-      databaseURL:process.env.REACT_APP_SECRET_DBURL 
-      
+
+      apiKey:proces.env.apikey,
+      authDomain:process.env.auth,
+      databaseURL:process.env.url
+
+
     };
     if (!firebase.apps.length) {
       firebase.initializeApp(firebaseConfig)
