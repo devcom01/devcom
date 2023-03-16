@@ -7,6 +7,7 @@ import avatar from "../../assets/imgs/face.jpg";
 import Header from "../../components/Cvgenerator/header.jsx";
 import Profile from "../../components/Cvgenerator/Profile.jsx"
 import ReactDOM from "react-dom";
+import "../../index.css"
 
 import { Route, Routes, Router } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -23,6 +24,7 @@ const cv = () => {
     educations,
     profil
   });
+  const [view,setView]=useState("main")
   useEffect(() => {
     setResume({ experiences, contacts, educations,profil });
   }, [experiences, contacts, educations,profil]);
@@ -40,11 +42,13 @@ const cv = () => {
         <div class="  h-full px-3 py-4 overflow-y-auto side dark:bg-gray-800">
           <ul class="space-y-2">
             <li>
-            <Link to="/contact" >
-              <a
+           
+              <a 
+              onClick={e=>setView("contact")}
                 href="#"
                 class="flex items-center p-2 text-base font-normal text-white rounded-lg dark:text-white hover:bg-white hover:text-gray-900 dark:hover:bg-gray-700"
               >
+
                 <svg
                   class="w-6 h-6 fill-yellow-400 "
                   viewBox="0 0 30 30"
@@ -63,11 +67,12 @@ const cv = () => {
                
                 <span class="ml-3">Contact</span>
                
-              </a> </Link>
+              </a> 
             </li>
             <li>
-            <Link to="/education" >
-              <a
+
+              <a 
+              onClick={e=>setView("education")}
                 href="#"
                 class="flex items-center p-2 text-base font-normal text-white rounded-lg dark:text-white hover:bg-white hover:text-gray-900 dark:hover:bg-gray-700"
               >
@@ -101,11 +106,12 @@ const cv = () => {
                
                 <span class="flex-1 ml-3 whitespace-nowrap">Education</span>
                 
-             </a></Link>
+             </a>
             </li>
             <li>
-            <Link to="/experience" >
-              <a
+            
+              <a 
+              onClick={e=>setView("experience")}
                 href="#"
                 class="flex items-center p-2 text-base font-normal text-white rounded-lg dark:text-white hover:bg-white hover:text-gray-900 dark:hover:bg-gray-700"
               >
@@ -148,12 +154,14 @@ const cv = () => {
                 </svg>
                 <span class="flex-1 ml-3 whitespace-nowrap">Experience</span>
              </a>
-              </Link>
+              
             </li>
             <li>
            
               <a
-                href="#"
+ 
+ onClick={e=>setView("skills")}
+ href="#"
                 class="flex items-center p-2 text-base font-normal text-white rounded-lg dark:text-white hover:bg-white hover:text-gray-900 dark:hover:bg-gray-700"
               >
                 <svg
@@ -198,8 +206,9 @@ const cv = () => {
               </a>
             </li>
             <li>
-            <Link to="/profil" >
               <a
+              
+              onClick={e=>setView("profile")}
                 href="#"
                 class="flex items-center p-2 text-base font-normal text-white rounded-lg dark:text-white hover:bg-white hover:text-gray-900 dark:hover:bg-gray-700"
               >
@@ -261,7 +270,7 @@ const cv = () => {
                   </g>
                 </svg>
                 <span class="flex-1 ml-3 whitespace-nowrap">Profil</span>
-              </a></Link>
+              </a>
             </li>
           </ul>
         </div>
@@ -270,18 +279,21 @@ const cv = () => {
 <div class="header">
       <Header  />
 </div>
-<Routes>
-
- <Route path="/contact" element={<div class="contact"><Contact setcontacts={setcontacts} /></div>} />
- <Route path="/education" element={<div class="contact"><Education seteducations={seteducations} /></div> } />
- <Route path="/experience" element={<div class="contact"><Experience setexperiences={setexperiences} /></div> } />
- <Route path="/profil" element={<div class="contact"><Profile setProfil={setProfil} /></div> } />
-
-</Routes>
 
     
     <div class="contact">
-        <Resume resume={resume} />
+      {view=="main" && 
+        <Resume resume={resume} />}
+        {view=="contact" && 
+        <Contact setcontacts={setcontacts} />}
+        {view=="education" && 
+       <Education seteducations={seteducations} />}
+        {view=="experience" && 
+        <Experience setexperiences={setexperiences} />}
+        {view=="profile" && 
+        <Profile setProfil={setProfil} />}
+        {view=="skills" && 
+        <Skills setProfil={setProfil} />}
       </div>
     </div>
   );

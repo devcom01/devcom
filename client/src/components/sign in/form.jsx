@@ -4,12 +4,15 @@ import { signInWithPopup } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import "../sign in/form.css"
+import { userContext } from "../../usercontext";
 const form = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [value, setValue] = useState("");
   const [git, setGit] = useState("");
   const navigate = useNavigate();
+  const user = userContext((state)=>state.user)
+  const change= userContext((state)=>state.userLoggedIn)
   //     const {googleSignIn}=UserAuth()
 
   //     const handleGoogleSignIn=async()=>{
@@ -44,9 +47,13 @@ const form = () => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        console.log(userCredential);
+       change(userCredential)
+
+        console.log(user)
+       navigate("/developerProfile")
       })
       .catch((error) => {
+        alert('check your credentials')
         console.log(error);
       });
   };

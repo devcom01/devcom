@@ -30,7 +30,7 @@ const [trynotrender,setaha]=useState("")
       authDomain:process.env.auth,
       databaseURL:process.env.url
 
-      
+
     };
     if (!firebase.apps.length) {
       firebase.initializeApp(firebaseConfig)

@@ -1,6 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import "./test.scss"
 const test = () => {
+    const navigate = useNavigate()
   return (
     <div className='test__all'>
         <div className="window">
@@ -27,10 +29,10 @@ const test = () => {
              <p>{"1)-Function solveMeFirst(num1,num2)"}  </p>
              <p>Guess what's next ?  </p>
              <div>
-             <button className='windows__button'> {"2) num1 + num2"}  </button>
+             <button className='windows__button' onClick={()=>navigate("/error")}> {"2) num1 + num2"}  </button>
 
-             <button className='windows__button'> {"2) c= num1 + num2"} </button>
-             <button className='windows__button'> {"2) return num1+num2"} </button>
+             <button className='windows__button' onClick={()=>navigate("/error")} > {"2) c= num1 + num2"} </button>
+             <button className='windows__button' onClick={e=>navigate("/developer/signup")}> {"2) return num1+num2"} </button>
              </div>
 
             </div>

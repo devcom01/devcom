@@ -6,16 +6,18 @@ import {BsFillCameraVideoFill,BsFillSignpostFill} from"react-icons/bs"
 import {AiFillCalendar} from "react-icons/ai"
 import { Avatar } from '@mui/material'
 import Card from '../../components/Devlisting/Card' 
+import { useNavigate } from 'react-router-dom'
 const listingdev = () => {
+  const navigate = useNavigate()
   return (
     <div className='listingdev__all'>
       <div className="listingdev__sideBar">
         <h4>logo</h4>
         <div className="companiesicon"><RiSuitcaseFill/></div>
         
-        <div className="companiesicon"><TiMessages/></div>
+        <div className="companiesicon"><TiMessages onClick={e=>navigate("chatRooms")}/> </div>
         
-        <div className="companiesicon"><BsFillCameraVideoFill/></div>
+        <div className="companiesicon"><BsFillCameraVideoFill onClick={e=>navigate("/interview")}/></div>
 
       </div>
       <div className="listingdev__mainSection">
@@ -43,7 +45,7 @@ const listingdev = () => {
 
 
         </div>
-     <button>Show profile</button>
+     <button onClick={e=>navigate("/company/profile")}> Show profile</button>
      
      <h4><span><AiFillCalendar/></span> Add availabilty</h4>
      <h4><span><BsFillSignpostFill/></span> Post an offer</h4>

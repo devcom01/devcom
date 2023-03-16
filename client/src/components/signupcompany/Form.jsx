@@ -106,8 +106,10 @@ const Form = () => {
       getDoc(userDocRef).then((snap) => {
         alert("wellcome new user create successfully");
         console.log("document written with ID:", snap.data());
+        navigate('/company/signin')
       });
     });
+  
   };
   return (
     <div>

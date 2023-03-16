@@ -4,7 +4,13 @@ import Navbar from '../../../components/DevProfile/navbar'
 import {IoIosArrowBack} from "react-icons/io"
 import { Avatar, Badge } from '@mui/material'
 import {BsPencilFill} from "react-icons/bs"
+import { useNavigate } from 'react-router-dom'
+import { userContext } from '../../../usercontext'
 const account = () => {
+  const navigate=useNavigate()
+  
+  const user = userContext((state)=>state.user)
+  const disconnect= userContext((state)=>state.userLoggedOut)
   return (
     <>
      <Navbar/>
@@ -12,7 +18,7 @@ const account = () => {
      
       <div className="account__title">
         <div className="return">
-          <IoIosArrowBack/>
+          <IoIosArrowBack style={{cursor:'pointer'}} onClick={e=>navigate("/developerProfile")}/>
         </div>
         <h3>My account : </h3>
       </div>
@@ -55,7 +61,7 @@ const account = () => {
      </div>
      <div className="subscription">
       
-     <button>sign out </button>
+     <button onClick={e=>{disconnect({}) ; navigate("/") }}>sign out </button>
      </div>
      
           </div>

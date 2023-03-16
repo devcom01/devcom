@@ -1,9 +1,12 @@
 import React from 'react'
 
+import "./company.css"
 const Campanyprofile = () => {
   return (
-    <div class="bodyyy">
+    <div class="companyprofile">
+        
  <div class=" coverdivv">
+
 
                 <div class="bg-white dark:bg-gray-800">
                     <div class="container mt-0mx-auto bg-white dark:bg-gray-800 rounded">

@@ -92,7 +92,7 @@ const haifa=  async () => {
   }
 }
   return (
-    <div>
+    <div className="aaa">
      
 
       <section class="section dark:bg-gray-900">
