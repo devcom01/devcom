@@ -30,6 +30,67 @@ COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
+-- Table `final`.`developers`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `final`.`developers` (
+  `firebase_id` VARCHAR(100) NOT NULL,
+  `developer_email` VARCHAR(60) NOT NULL,
+  `pseudo` VARCHAR(45) NOT NULL,
+  `first_name` VARCHAR(50) NOT NULL,
+  `last_name` VARCHAR(50) NOT NULL,
+  `points` INT NOT NULL DEFAULT '0',
+  `xp` INT NOT NULL DEFAULT '0',
+  `rank` INT NOT NULL DEFAULT '10',
+  `position` INT NOT NULL,
+  `tech_stack` JSON NOT NULL,
+  `description` VARCHAR(300) NOT NULL,
+  `available` TINYINT NULL DEFAULT NULL,
+  `cv` JSON NULL DEFAULT NULL,
+  `role` VARCHAR(20) NOT NULL,
+  PRIMARY KEY (`firebase_id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `final`.`rooms`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `final`.`rooms` (
+  `room_id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL DEFAULT NULL,
+  `description` VARCHAR(255) NULL DEFAULT NULL,
+  `img_url` VARCHAR(255) NULL,
+  PRIMARY KEY (`room_id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 13
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `final`.`chatroom`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `final`.`chatroom` (
+  `idchatroom` INT NOT NULL AUTO_INCREMENT,
+  `developers_firebase_id` VARCHAR(100) NOT NULL,
+  `rooms_room_id` INT NOT NULL,
+  `socket_id` VARCHAR(255) NULL DEFAULT NULL,
+  PRIMARY KEY (`idchatroom`),
+  INDEX `fk_chatroom_developers1_idx` (`developers_firebase_id` ASC) VISIBLE,
+  INDEX `fk_chatroom_rooms1_idx` (`rooms_room_id` ASC) VISIBLE,
+  CONSTRAINT `fk_chatroom_developers1`
+    FOREIGN KEY (`developers_firebase_id`)
+    REFERENCES `final`.`developers` (`firebase_id`),
+  CONSTRAINT `fk_chatroom_rooms1`
+    FOREIGN KEY (`rooms_room_id`)
+    REFERENCES `final`.`rooms` (`room_id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
 -- Table `final`.`companies`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `final`.`companies` (
@@ -42,22 +103,23 @@ COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
--- Table `final`.`developers`
+-- Table `final`.`conversations`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `final`.`developers` (
-  `firebase_id` VARCHAR(100) NOT NULL,
-  `developer_email` VARCHAR(60) NOT NULL,
-  `pseudo` VARCHAR(45) NOT NULL,
-  `points` INT NOT NULL DEFAULT '0',
-  `xp` INT NOT NULL DEFAULT '0',
-  `rank` INT NOT NULL DEFAULT '10',
-  `position` INT NOT NULL,
-  `tech_stack` JSON NOT NULL,
-  `description` VARCHAR(300) NOT NULL,
-  `available` TINYINT NULL DEFAULT NULL,
-  `cv` JSON NULL DEFAULT NULL,
-  `role` VARCHAR(20) NOT NULL,
-  PRIMARY KEY (`firebase_id`))
+CREATE TABLE IF NOT EXISTS `final`.`conversations` (
+  `conversation_id` INT NOT NULL AUTO_INCREMENT,
+  `message` VARCHAR(405) NULL DEFAULT NULL,
+  `sent` TIMESTAMP NULL DEFAULT NULL,
+  `developers_firebase_id` VARCHAR(100) NOT NULL,
+  `rooms_room_id` INT NOT NULL,
+  PRIMARY KEY (`conversation_id`),
+  INDEX `fk_conversations_developers1_idx` (`developers_firebase_id` ASC) VISIBLE,
+  INDEX `fk_conversations_rooms1_idx` (`rooms_room_id` ASC) VISIBLE,
+  CONSTRAINT `fk_conversations_developers1`
+    FOREIGN KEY (`developers_firebase_id`)
+    REFERENCES `final`.`developers` (`firebase_id`),
+  CONSTRAINT `fk_conversations_rooms1`
+    FOREIGN KEY (`rooms_room_id`)
+    REFERENCES `final`.`rooms` (`room_id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;

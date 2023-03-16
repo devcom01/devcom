@@ -15,6 +15,14 @@ module.exports = {
    getAlldevelopers: () => {
       return connection.query("SELECT * from developers");
    },
+
+
+   // get One developer
+
+   getOneDev : (_id)=>{
+      return connection.query(`SELECT * from developers where firebase_id='${_id}'`)
+      console.log(_id);
+   },
    //based stack and minimum experience required
    getSpecificDevelopers: (stack, experience) => {
       let sql = `select * from developers where regexp_like(tech_stack,"${stack}") and  available=True and JSON_EXTRACT(tech_stack,"$[0].experience")>=${experience}`

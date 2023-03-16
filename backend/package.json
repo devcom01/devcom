@@ -6,9 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
 
-    "server": "nodemon"
+    
 
-    "server": "nodemon index.js"
+    "server": "nodemon index.js",
+    "socket" : "nodemon socketIo.js"
 
   },
   "keywords": [],

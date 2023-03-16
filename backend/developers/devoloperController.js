@@ -1,4 +1,4 @@
-const { addNewDeveloper, addnewstack, getAlldevelopers, getSpecificDevelopers, getAllMatchingdevelopers, getMatchingdevelopersbasedonDescription,getMatchingSystem } = require("./devModel")
+const { addNewDeveloper, addnewstack,getOneDev, getAlldevelopers, getSpecificDevelopers, getAllMatchingdevelopers, getMatchingdevelopersbasedonDescription,getMatchingSystem } = require("./devModel")
 
 
 exports.addDeveloper = (async (req, res) => {
@@ -88,6 +88,21 @@ catch(err){
     res.status(504).json(err)
 }
 })
+
+exports.getOneDev=(async(req,res)=>{
+    let dev = req.params['id']
+    console.log(dev);
+
+    try{
+        let one = await getOneDev(dev)
+        res.status(200).json(one[0])
+    }
+    catch (err) {
+        res.status(500).json(err)
+    }
+})
+
+
 
 
 

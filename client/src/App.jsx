@@ -1,12 +1,14 @@
-import LandingPage from "./vues/LandingPage/LandingPage";
-import Interview from "./vues/interview/interview.jsx";
-import LandingPageC from "./vues/LandingPageCompanies/LandingPageC";
+
+
+import Cover from "./components/chatRoom/Cover.jsx"
+
+
 function App() {
-  return (
-  
-        <LandingPageC/>
-    
-  );
+  return(
+  <div> 
+  <Cover/>
+  </div>
+  )
 }
 
 export default App;
