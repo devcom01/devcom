@@ -11,6 +11,7 @@ import Editor from "@monaco-editor/react";
 import { languages } from "./languagesSupported";
 import Confetti from 'react-confetti'
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const toyproblems = () => {
   const languageRef = useRef(null);
   const [code,setCode]=useState("// TIME TO HACK ! DONT FORGET DO ADD AT THE END OF YOUR CODE A CONSOLE.LOG OF THE FUNCTION ITS SELF");
@@ -21,7 +22,7 @@ const toyproblems = () => {
   const [memory,setmemory] =useState(null)
   const [stop,setstop] = useState(false)
   const [language,setlanguage]=useState("javascript")
-
+  const navigate = useNavigate()
 
   useEffect(() => {
     let h1 = document.querySelector(".toyproblems__sideBar");
@@ -67,9 +68,8 @@ useEffect(()=>{
       url: 'https://judge0-ce.p.rapidapi.com/submissions/'+token,
       params: { base64_encoded: "true", fields: "*" },
       headers: {
-        "X-RapidAPI-Host": process.env.host,
-        "X-RapidAPI-Key": process.env.key,
-
+        "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com",
+        "X-RapidAPI-Key": "d99009bfd4mshce3689b0f908b24p1fac34jsn19b8bdf15c45",
       },
     };
     try {
@@ -110,10 +110,8 @@ useEffect(()=>{
       headers: {
         "content-type": "application/json",
         "Content-Type": "application/json",
-
-        "X-RapidAPI-Host": process.env.judgehost,
-        "X-RapidAPI-Key": process.env.judgekey,
-
+        "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com",
+        "X-RapidAPI-Key": "d99009bfd4mshce3689b0f908b24p1fac34jsn19b8bdf15c45",
       },
       data: formData,
     };
@@ -135,15 +133,18 @@ useEffect(()=>{
     <div className="toyproblems_All">
       <div className="toyproblems__sideBar">
         <div className="toyproblems__sideBar__logo">
-          <p style={{ marginRight: "20px" }}>logo</p>
+          <p style={{ marginRight: "20px" }} onClick={e=>
+          navigate("/developerProfile")}>logo</p>
 
-          <div className="toyproblems__sideBar__logoHome">
+          <div className="toyproblems__sideBar__logoHome" onClick={e=>
+          navigate("/developerProfile")}>
             <p>Home</p>
             <p>Report Home for your next assignement</p>
           </div>
         </div>
 
-        <div className="toyproblems__sideBar__messages">
+        <div className="toyproblems__sideBar__messages" onClick={e=>
+          navigate("/chatRooms")}>
           <p>
             <TbMessages style={{ marginRight: "40px" }} />{" "}
           </p>
@@ -157,7 +158,8 @@ useEffect(()=>{
             {" "}
             <SiGooglesearchconsole style={{ marginRight: "40px" }} />{" "}
           </p>
-          <div className="toyproblems__sideBar__logoHome">
+          <div className="toyproblems__sideBar__logoHome" onClick={e=>
+          navigate("/listingOffers")}>
             <p>Jobs</p>
             <p>Find a job that suits your needs</p>
           </div>

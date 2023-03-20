@@ -4,11 +4,17 @@ import { signInWithPopup } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import "../sign in/form.css"
+import {userContext}  from "../../usercontext";
+
+
 const Form = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [value, setValue] = useState("");
   const navigate = useNavigate();
+  
+  const user = userContext((state)=>state.user)
+  const change= userContext((state)=>state.userLoggedIn)
 
 
   const handleClick = () => {
@@ -32,7 +38,9 @@ const Form = () => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        console.log(userCredential);
+        change(userCredential)
+        console.log(user)
+        navigate('/listingDev')
       })
       .catch((error) => {
         console.log(error);

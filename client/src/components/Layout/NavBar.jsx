@@ -1,5 +1,7 @@
-﻿import "./navbar.scss"
+﻿import { useNavigate } from "react-router-dom"
+import "./navbar.scss"
 export default function NavBar({which}) {
+    const navigate = useNavigate()
     return (
         <nav className='companies__navbar' style={{position:"fixed"}}>
             <div className='companies__container' style={{ background: "transparent" }}>
@@ -12,8 +14,12 @@ export default function NavBar({which}) {
                 </div>
             </div>
             <div className='companies__nav-user'>
-                <button className="button" styles={which==="companies" ? { boxShadow: "inset 0 0 0 1px black" , color : "black" } : { boxShadow: "inset 0 0 0 1px white" } }>Log in</button>
-                <button className="button" styles={which==="companies" ? {color : "black" }:undefined} >Join</button>
+                <button className="nav__button" style={which==="companies" ? { boxShadow: "inset 0 0 0 1px black" , color : "black" } : { boxShadow: "inset 0 0 0 1px white" , color:"#fff" } } onClick={e=>{
+                    which==="companies" ?  navigate("/company/signup") : navigate("/testdev") 
+                }}>Join</button>
+                <button className="nav__button" onClick={e=>{
+                   which==="companies" ?  navigate("/company/signin") : navigate("/developer/signin") 
+                }}  style={which==="companies" ? { boxShadow: "inset 0 0 0 1px black" , color : "black" } : { boxShadow: "inset 0 0 0 1px red" , color:"#fff" } } >Log in </button>
             </div>
         </nav>
     )

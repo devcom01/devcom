@@ -3,12 +3,13 @@ import {Avatar, Button, Input, Modal, TextareaAutosize, Typography} from '@mui/m
 import {ImShrink2} from  'react-icons/im'
 import { Box } from '@mui/system'
 import DateTimePicker from 'react-datetime-picker';
+import { useNavigate } from 'react-router-dom';
 
 
 const ListingAll = () => {
   const [open,setopen]=useState(false)
     const [view,setView]=useState(
-        {class:"container",
+        {class:"listing__info__container",
         mainClass:"listing__mainsection",
         selected : false , 
         selectedItem : null ,
@@ -33,7 +34,7 @@ const ListingAll = () => {
 <p >senior level</p>
 </div>
 <button  style={{cursor:"pointer"} } onClick={e=>setView( view =>  {
-        if (view.class =="container") { return {mainClass:"listing__mainsection flex" ,class:view.class+"short" , selected:true , selectedItem:{}} } else {return {mainClass:"listing__mainsection",class:"container" , selected:false,selectedItem:null}} } )}>See more </button>
+        if (view.class =="listing__info__container") { return {mainClass:"listing__mainsection flex" ,class:"containershort" , selected:true , selectedItem:{}} } else {return {mainClass:"listing__mainsection",class:"listing__info__container" , selected:false,selectedItem:null}} } )}>See more </button>
 </div>
     </div>
     <div className={view.class} >
@@ -49,7 +50,7 @@ const ListingAll = () => {
 <p >senior level</p>
 </div>
 <button onClick={e=>setView( view =>  {
-        if (view.class =="container") { return {mainClass:"listing__mainsection flex" ,class:view.class+"short" , selected:true , selectedItem:{}} } else {return {mainClass:"listing__mainsection",class:"container" , selected:false,selectedItem:null}} } )}>See more </button>
+        if (view.class =="listing__info__container") { return {mainClass:"listing__mainsection flex" ,class:view.class+"short" , selected:true , selectedItem:{}} } else {return {mainClass:"listing__mainsection",class:"listing__info__container" , selected:false,selectedItem:null}} } )}>See more </button>
 </div>
     </div>    <div className={view.class} >
     <Avatar sx={{ bgcolor: 'green' , transform:'scale(1.2)' }} variant="rounded">
@@ -64,7 +65,7 @@ const ListingAll = () => {
 <p >senior level</p>
 </div>
 <button onClick={e=>setView( view =>  {
-        if (view.class =="container") { return {mainClass:"listing__mainsection flex" ,class:view.class+"short" , selected:true , selectedItem:{}} } else {return {mainClass:"listing__mainsection",class:"container" , selected:false,selectedItem:null}} } )}>See more </button>
+        if (view.class =="listing__info__container") { return {mainClass:"listing__mainsection flex" ,class:view.class+"short" , selected:true , selectedItem:{}} } else {return {mainClass:"listing__mainsection",class:"listing__info__container" , selected:false,selectedItem:null}} } )}>See more </button>
 </div>
     </div>    <div className={view.class} >
     <Avatar sx={{ bgcolor: 'green' , transform:'scale(1.2)' }} variant="rounded">
@@ -79,7 +80,7 @@ const ListingAll = () => {
 <p >senior level</p>
 </div>
 <button onClick={e=>setView( view =>  {
-        if (view.class =="container") { return {mainClass:"listing__mainsection flex" ,class:view.class+"short" , selected:true , selectedItem:{}} } else {return {mainClass:"listing__mainsection",class:"container" , selected:false,selectedItem:null}} } )}>See more </button>
+        if (view.class =="listing__info__container") { return {mainClass:"listing__mainsection flex" ,class:view.class+"short" , selected:true , selectedItem:{}} } else {return {mainClass:"listing__mainsection",class:"listing__info__container" , selected:false,selectedItem:null}} } )}>See more </button>
 </div>
     </div>
     
@@ -132,7 +133,7 @@ const ListingAll = () => {
   <button style={{cursor:"pointer"}} onClick={e=>setopen(true)}>Apply now</button>
 </div>
 <ImShrink2 style={{cursor:"pointer"}} onClick={e=>setView( view =>  {
-        if (view.class =="container") { return {mainClass:"listing__mainsection flex" ,class:view.class+"short" , selected:true , selectedItem:{}} } else {return {mainClass:"listing__mainsection",class:"container" , selected:false,selectedItem:null}} } )}/>
+        if (view.class =="listing__info__container") { return {mainClass:"listing__mainsection flex" ,class:view.class+"short" , selected:true , selectedItem:{}} } else {return {mainClass:"listing__mainsection",class:"listing__info__container" , selected:false,selectedItem:null}} } )}/>
     <Modal
   open={open}
   onClose={e=>setopen(false)}

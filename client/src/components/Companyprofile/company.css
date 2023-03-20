@@ -1,4 +1,11 @@
-body{    background: #e0e0e6;}
+.companyprofile{    background: #e0e0e6;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 200vh;
+    padding: 50px;
+
+}
 .sidee{background: #f4f4f6;}
 .divavatarr{
     z-index: 99999;

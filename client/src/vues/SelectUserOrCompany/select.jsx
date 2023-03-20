@@ -1,13 +1,19 @@
 import React, { useEffect } from 'react'
 import "./select.scss"
+import { Navigate, useLocation, useNavigate } from 'react-router-dom'
 import gsap from 'gsap'
 const select = () => {
+  const navigate = useNavigate();
+  const localtion=useLocation()
+  
+
   useEffect(()=>{
-    gsap.set('.cursor',{xPercent:-50,yPercent:-50})
+    if (localtion.pathname=='/'){ 
+  gsap.set('.cursor',{xPercent:-50,yPercent:-50})
     window.addEventListener("mousemove",e=>{
       gsap.to('.cursor',0.2,{x:e.clientX,y:e.clientY})
-    })
-
+    },[])
+  }
   },[]
   )
   return (
@@ -22,8 +28,8 @@ const select = () => {
       <p style={{color:"yellow"}}>{"WE ASSUME THAT YOU'RE A COMPANY THEN , WHAT A PLEASURE ! PLEASE PRESS THE COMPANY BUTTON BELOW "}<span style={{color:"#2e9795"}}>{"}"}</span></p>
     </div>
     <div className="choices">
-      <button>COMPANY</button>
-      <button>DEVELOPER</button>
+      <button onClick={e=>  navigate("/companyHome")  }>COMPANY</button>
+      <button onClick={e=>  navigate("/devHome")} > DEVELOPER</button>
     </div>
     </div> )
 }

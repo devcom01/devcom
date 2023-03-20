@@ -3,7 +3,8 @@
   *:focus {
     outline: none;
 }
-.listing {font-family: 'Lato', sans-serif;
+.listing {
+    font-family: 'Lato', sans-serif;
     width: 100%;
     height: 100%;
     background-color: #fcfcfcfc;
@@ -81,7 +82,7 @@ margin-top: 100px;
             content: '';
             border-right: #d1d1d1 solid 0.75px;
             width: 0px;
-            height: 40px;
+            
         }
         input {
             background: transparent;
@@ -125,7 +126,7 @@ margin-top: 100px;
          .listing__side__alert{
             margin-top: 100px;
             width: 70%;
-            height: 140px;
+            height: 170px;
             border-radius: 7px;
             background-color: #dce9fb;
             display: flex;
@@ -152,7 +153,7 @@ margin-bottom: 10px;
         }
         button {
             display: flex;
-            width: 50%;
+            width: 90%;
             align-items: center;
             justify-content: center;
             border: 0px;
@@ -208,8 +209,8 @@ margin-left: 30px;
                 margin: 15px;
                 display: flex;
                 padding: 15px;
-                width: 325px;
-                height: 50px;
+                width: 350px;
+                height: 100px;
                 background: #ffffff;
                 color: #000000;
                 
@@ -218,6 +219,7 @@ margin-left: 30px;
                 .listing__info{
                     display: flex; 
                   overflow: hidden; gap: 5px;
+
                 .short_keywords{
                     display: flex;
                     align-items: center;
@@ -251,7 +253,7 @@ margin-left: 30px;
 
             }
             }
-            .container {
+            .listing__info__container {
                 margin: 15px;
                 box-shadow: .1px .1px 2px #000;
 
@@ -260,12 +262,12 @@ margin-left: 30px;
                 display: flex;
                 padding: 15px;
               flex-direction: column;
-                height: 248px;
+                height: 320px;
                 backdrop-filter: blur(16px) saturate(180%);
                 -webkit-backdrop-filter: blur(16px) saturate(180%);
                 background-color:  #ffffff;
                 border-radius: 15px;
-                width: 245px;
+                width: 300px;
                 
                 gap: 20px;
                 color: #000000;
@@ -299,7 +301,7 @@ margin-left: 30px;
             transition: all 1s ease;
                     border: 0px;
                     border-radius: 7px;
-                    height: 50px;
+                    height: 40px;
                     background: #0062ff;
                     color: #fff;
                 }

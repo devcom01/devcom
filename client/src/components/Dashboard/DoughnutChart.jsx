@@ -1,17 +1,34 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import { Doughnut } from "react-chartjs-2";
 const DoughnutChart = () => {
+const [applications,setApplications]=useState([])
+const [jobOffers,setJobOffers]=useState([])
+useEffect(() => {
+allData()
+},[])
+
+const allData=async()=>{
+
+  try{
+    const result = await fetch('http://localhost:3000/api/dashboard')
+    const data = await result.json()
+    console.log("all",data)
+    setApplications(data.applications)
+    setJobOffers(data.jobOffers)
+  }
+  catch(err){
+    console.log(err)
+  }
+}
+
     const data = {
-        labels: ["Red", "Blue", "Yellow"],
+        labels: [ "Total Job Offers", "Total Applications"],
         datasets: [
           {
             label: "My First Dataset",
-            data: [300, 50, 100],
-            backgroundColor: [
-              "rgb(133, 105, 241)",
-              "rgb(164, 101, 241)",
-              "rgb(101, 143, 241)",
-            ],hoverOffset: 4,
+            data: [applications.length, jobOffers.length],
+            backgroundColor: ["#2bb66b", "#ffe702"],
+            hoverOffset: 4,
           },
         ],
       };
@@ -24,7 +41,7 @@ const DoughnutChart = () => {
       };
   return (
     <div>
-      
+      <h2>Supply & Demand</h2>
        <Doughnut data={data} options={options}  class="canvadou"/>
   
     </div>
