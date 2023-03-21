@@ -2,6 +2,7 @@ const developerRouter = require("express").Router()
 const developerController = require("./devoloperController")
 
 developerRouter.get("/", developerController.getAll)
+developerRouter.get("/getone/:id",developerController.getOne)
 developerRouter.get("/specific/:stack/:experience", developerController.getSpecific)
 developerRouter.get("/matching/offers", developerController.getMatchingOffers)
 developerRouter.get("/description", developerController.getMatchingDesc)

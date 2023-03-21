@@ -5,6 +5,14 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   define: {global: 'window'},
+ 
+  optimizeDeps: {
+    include: [
+      'react',
+      'react-dom',
+      '@fortawesome/fontawesome-free',
+    ],
+  },
 
 })
 // server.hmr.overlay=false

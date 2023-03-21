@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+
 
 .aa {
   background: url("./assets/imgs/bg2.jpg") ;
@@ -454,7 +455,7 @@ download:hover{
   border: 1px solid black;
   background-color: rgb(255, 255, 255);
   margin: 5px;
-}
+} 
 .bgtable{margin: 173px 0px;
   width: 60%;
   padding: 19px;}
@@ -699,6 +700,7 @@ width:100%}
   transition: opacity 0.25s ease;
 }
 
+
 .react-toggle--checked .react-toggle-track-x {
   opacity: 0;
 }
@@ -750,3 +752,6 @@ width:100%}
   background-color: rgb(255, 255, 255);
   margin: 5px;
 }
+
+
+/* background-image: url("https://www.transparenttextures.com/patterns/triangles.png"); */

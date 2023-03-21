@@ -16,6 +16,14 @@ module.exports = {
    getAlldevelopers: () => {
       return connection.query("SELECT * from developers");
    },
+
+
+   // get One developer
+
+   getOneDev : (id)=>{
+      return connection.query(`SELECT * FROM developers where developer_email='${id}'`)
+     
+   },
    //based stack and minimum experience required
    getSpecificDevelopers: (stack, experience) => {
       let sql = `select * from developers where regexp_like(tech_stack,"${stack}") and  available=True and JSON_EXTRACT(tech_stack,"$[0].experience")>=${experience}`

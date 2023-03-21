@@ -1,5 +1,3 @@
-
-
 import Signin from "./vues/sign in/signin";
 import Signup from "./vues/sign up/signup";
 import Signupcompany from "./vues/signupcompany/signup"
@@ -21,6 +19,10 @@ import Toyproblem from "./vues/ToyProblems/toyproblems"
 import Listing from './vues/listingOffers/listing'
 import CompanyProfile from './vues/listingDev/listingdev'
 import Contact from "./components/Cvgenerator/contact";
+import Cover from "./components/chatRoom/Cover.jsx"
+import Receivedmessage from "./components/chatRoom/ReceivedMessage.jsx"
+import LandDev from "./components/landDev/LandDev"
+import "./components/landDev/LandDev.css"
 function App() {
   const logout = () => {
     localStorage.clear();
@@ -28,11 +30,11 @@ function App() {
 
   return (
 
-    <div>
+    <div >
       
       {/* // <button onClick ={logout}>logout </button>  */}
 
-    <Routes>
+    {/* <Routes>
     <Route path="/" element={ <Select/>} />
     <Route path="/devHome" element={ <LandingPage/>} />
     <Route path="/companyHome" element={ <LandingPageC/>} />
@@ -53,8 +55,14 @@ function App() {
     <Route path="/listingDev" element={<CompanyProfile/>} />
     <Route path="/dashboard" element={<Dashboard/>} />
     <Route path="/interview" element={<Interview/>} />
+    <Route path="/chatrooms" element={<Cover/>}/>
     
-    </Routes>
+    
+    </Routes> */}
+  {/* <Receivedmessage/> */}
+    {/* <Cover/> */}
+    <LandDev/>
+
     </div>
 
   
