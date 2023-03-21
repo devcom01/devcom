@@ -1,0 +1,752 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+
+.aa {
+  background: url("./assets/imgs/bg2.jpg") ;
+  background-repeat: no-repeat;
+  
+  height: 40vh;
+ 
+display: flex;
+opacity: 0.5;
+transform: scale(1);
+justify-items: start;
+
+background-size: cover;
+background-position: center;
+
+width:100%;
+}
+.img {
+position: absolute;
+  width:200px;
+  height: 200px;
+  
+ 
+  border-radius: 0;
+    box-shadow: none;
+  right: 30px;
+ 
+  bottom: 436px;
+}
+.sidecv{
+margin-top: -148px; 
+}
+.p-discover{
+  position: absolute;
+    bottom: 587px;
+    left: -93px;
+}
+.p-build{
+  position: absolute;
+  bottom: 520px;
+  left: -68px;
+}
+.form {
+ 
+  background: linear-gradient(159deg,rgba(37,37,50,.98) 0,rgba(35,35,45,.98) 100%);
+}
+.input{
+  background:#20202a;
+}
+.divavatar{
+  padding: 34px;
+  background: linear-gradient(159deg,rgba(37,37,50,.98) 0,rgba(35,35,45,.98) 100%);
+}
+.side{
+  background:#20202a;
+}
+.section{background :#191923}
+.avatar{
+  margin:0px 24px; 
+}
+.contact{
+  margin: -36px 256px;
+    width: 82.6%;
+}
+.header{
+  margin: -36px 256px;
+    width: 82.6%;
+}
+.button{
+  background-color: #ffc107;
+    color: #20202a;
+    border-radius: 54;
+    padding: 10px 168px;
+    margin: 19px -191px;
+    border-color:  #ffc107;
+}
+button:hover{
+  background-color: #daa711;
+}
+.buttonex{
+  background-color: #ffc107;
+    color: #20202a;
+    border-radius: 54;
+    padding: 10px 168px;
+    margin: 19px 34px;
+    border-color:  #ffc107;
+}
+
+buttonex:hover{
+  background-color: #daa711;
+}
+.buttonep{
+  background-color: #ffc107;
+    color: #20202a;
+    border-radius: 54;
+    padding: 10px 168px;
+    margin: 19px 34px;
+    border-color:  #ffc107;
+}
+buttonep:hover{
+  background-color: #daa711;
+}
+.buttone{
+  background-color: #ffc107;
+    color: #20202a;
+    border-radius: 54;
+    padding: 10px 168px;
+    margin: 19px 0px;
+    border-color:  #ffc107;
+}
+buttone:hover{
+  background-color: #daa711;
+}
+
+.download{
+  background-color: #ffc107;
+    color: #20202a;
+    border-radius: 54;
+    padding: 10px 168px;
+    margin: -52px 180px;
+    border-color:  #ffc107;
+}
+download:hover{
+  background-color: #daa711;
+}
+.bar{
+  display: block;
+  box-sizing: border-box;
+  height: 300px;
+  width: 500px;
+  margin: 95px 112px;
+}
+
+
+
+
+
+.div{
+  position: relative;
+  width: 30vw;
+  height: 30vw;
+  line-height: 30vw;
+  text-align: center;
+  color: #252B37;
+  background-color: #151823;
+  animation: textColor 10s ease infinite;
+} 
+
+
+
+.clearfix{
+	clear: both;
+}
+.resume-box{
+	width: 800px;
+	height: 1000px;
+	margin: 62px auto;
+	background-color: white;
+}
+.box-outer{
+	padding:30px;
+}
+.box-1{
+	background-color: #26252d;
+	width: 35%;
+	float: left;
+	height: 1000px;
+}
+
+.box-2{
+	width: 60%;
+	float: left;
+	padding: 20px;
+}
+.profile{
+	width: 100%;
+}
+.content{
+	padding: 20px;
+}
+
+
+#progress {
+    background: #333;
+    border-radius: 13px;
+    height: 8px;
+    width: 100%;
+    padding: 3px;
+}
+
+#progress:after {
+    content: '';
+    display: block;
+    background: orange;
+    width: 50%;
+    height: 100%;
+    border-radius: 9px;
+}
+#progress1 {
+    background: #333;
+    border-radius: 13px;
+    height: 8px;
+    width: 100%;
+    padding: 3px;
+}
+
+#progress1:after {
+    content: '';
+    display: block;
+    background: orange;
+    width: 40%;
+    height: 100%;
+    border-radius: 9px;
+}
+#progress2 {
+    background: #333;
+    border-radius: 13px;
+    height: 8px;
+    width: 100%;
+    padding: 3px;
+}
+
+#progress2:after {
+    content: '';
+    display: block;
+    background: orange;
+    width: 80%;
+    height: 100%;
+    border-radius: 9px;
+}
+
+#progress3 {
+    background: #333;
+    border-radius: 13px;
+    height: 8px;
+    width: 100%;
+    padding: 3px;
+}
+
+#progress3:after {
+    content: '';
+    display: block;
+    background: orange;
+    width: 90%;
+    height: 100%;
+    border-radius: 9px;
+}
+.intro{text-align: center;}
+.intro h1{
+	font-size: 40px;
+	font-weight: bold;
+	color: #26252d;
+
+}
+.hr{
+	height: 15px;
+    border: none;
+    background-color: yellow;
+    margin: -45px 20px;
+}
+
+.intro-p{
+	color: #7d7d7d;
+  font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    margin-top: 13%!important;
+    font-weight: 400;
+}
+.intro p{
+	color: #7d7d7d;
+    font-family: system-ui;
+    font-weight: 300;
+    font-size: 15px;
+    margin-top: -5px;
+    font-weight: 400;
+}
+.content-2{
+	padding-top: 40px;
+}
+.head{
+	color: #26252d;
+    font-family: system-ui;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin:0px;
+}
+.para-1{
+	font-size: 16px;
+    text-transform: uppercase;
+    color: #26252d;
+    font-weight: 400;
+    margin: 5px 0px;
+    margin-top: 10px;
+}
+.para-2{
+	font-size: 14px;
+	text-transform: capitalize;
+    color: #7d7d7d;
+    font-weight: 400;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+ 
+.react-toggle {
+  touch-action: pan-x;
+
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.react-toggle-screenreader-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.react-toggle--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.25s;
+  transition: opacity 0.25s;
+}
+
+.react-toggle-track {
+  width: 50px;
+  height: 24px;
+  padding: 0;
+  border-radius: 30px;
+  background-color: #4D4D4D;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
+  background-color: #000000;
+}
+
+.react-toggle--checked .react-toggle-track {
+  background-color: #000000;
+}
+
+.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+  background-color: #000000;
+}
+
+.react-toggle-track-check {
+  position: absolute;
+  width: 14px;
+  height: 10px;
+  top: 0px;
+  bottom: 0px;
+  margin-top: auto;
+  margin-bottom: auto;
+  line-height: 0;
+  left: 8px;
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+
+.react-toggle--checked .react-toggle-track-check {
+  opacity: 1;
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+
+.react-toggle-track-x {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 0px;
+  bottom: 0px;
+  margin-top: auto;
+  margin-bottom: auto;
+  line-height: 0;
+  right: 10px;
+  opacity: 1;
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+
+.react-toggle--checked .react-toggle-track-x {
+  opacity: 0;
+}
+
+.react-toggle-thumb {
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #4D4D4D;
+  border-radius: 50%;
+  background-color: #FAFAFA;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.react-toggle--checked .react-toggle-thumb {
+  left: 27px;
+  border-color: #000000;
+}
+
+.react-toggle--focus .react-toggle-thumb {
+  -webkit-box-shadow: 0px 0px 3px 2px #0099E0;
+  -moz-box-shadow: 0px 0px 3px 2px #0099E0;
+  box-shadow: 0px 0px 2px 3px #0099E0;
+}
+
+.react-toggle:active:not(.react-toggle--disabled) .react-toggle-thumb {
+  -webkit-box-shadow: 0px 0px 5px 5px #0099E0;
+  -moz-box-shadow: 0px 0px 5px 5px #0099E0;
+  box-shadow: 0px 0px 5px 5px #0099E0;
+}
+.codeedior {
+  width: 700px;
+  height: 450px;
+  background-color: rgb(11, 11, 11); 
+}
+
+.CodeMirror {
+  border: 1px solid black;
+  background-color: rgb(255, 255, 255);
+  margin: 5px;
+}
+.bgtable{margin: 173px 0px;
+  width: 60%;
+  padding: 19px;}
+  .sidedashboard{
+    --tw-bg-opacity: 1;
+    background-color: rgb(17 28 68 / var(--tw-bg-opacity));
+    /* margin-left: 0.5rem; */
+    border-radius: 1rem;
+    /* margin: 6rem 0.5rem; */
+    margin: 6rem 1rem;
+    height: 86%;
+  }
+  .bodydashboard{
+    --tw-bg-opacity: 1;
+    background-color: rgb(5 17 57 / var(--tw-bg-opacity));
+  }
+  .dashcontainer{
+    margin-top: 4%;
+  }
+ 
+  .bar {
+   
+    box-shadow: 0 3px 8px 0 rgb(15 15 20 / 20%);
+    background-color: #2f3349;
+    border-style: solid;
+    border-radius: 1rem;
+    z-index: 20;
+    padding: 34px 34px;
+    margin:144px 21px;
+    width: 86%;
+    }
+    .line {--tw-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+      --tw-shadow-colored: 0 2px 2px 0 var(--tw-shadow-color), 0 3px 1px -2px var(--tw-shadow-color), 0 1px 5px 0 var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+      --tw-bg-opacity: 1;
+      background-color: #2f3349;
+      background-clip: border-box;
+    
+      border-style: solid;
+      border-radius: 1rem;
+      z-index: 20;
+    
+      padding: 46px 35px;
+      width: 86%;
+     
+      margin: 144px 0px;
+      
+      }
+    .canvaline{
+        height: 100%;
+        width: 100%;
+      } 
+      .divstat{ z-index: 20;padding: 0px 0px;
+        margin: 132px -16px;}
+      .Pie {--tw-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+        --tw-shadow-colored: 0 2px 2px 0 var(--tw-shadow-color), 0 3px 1px -2px var(--tw-shadow-color), 0 1px 5px 0 var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        --tw-bg-opacity: 1;
+        background-color: #2f3349;
+        background-clip: border-box;
+      
+        border-style: solid;
+        border-radius: 1rem;
+        z-index: 20;
+       
+        padding: 40px 35px;
+        width: 86%;
+
+
+        margin:0px 21px;
+        }
+     
+        .canvapie{
+          height: 100%;
+          width: 100%;
+        }
+      .Doughnut{
+          --tw-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+        --tw-shadow-colored: 0 2px 2px 0 var(--tw-shadow-color), 0 3px 1px -2px var(--tw-shadow-color), 0 1px 5px 0 var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        --tw-bg-opacity: 1;
+        background-color: #2f3349;
+        background-clip: border-box;
+      
+        border-style: solid;
+        border-radius: 1rem;
+        z-index: 20;
+        padding: 46px 35px;
+        width: 86%;
+        margin:0px 0px;
+      
+
+        }
+        .canvadou{ height: 100%;
+          width: 100%;}
+        .radar{
+          --tw-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+          --tw-shadow-colored: 0 2px 2px 0 var(--tw-shadow-color), 0 3px 1px -2px var(--tw-shadow-color), 0 1px 5px 0 var(--tw-shadow-color);
+          box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+          --tw-bg-opacity: 1;
+          background-color: #2f3349;
+          background-clip: border-box;
+       
+          border-style: solid;
+          border-radius: 1rem;
+          z-index: 20;
+          padding: 46px 35px;
+        width: 86%;
+        margin: 17px 21px;
+        }
+        .canvaradar{height: 100%;
+          width: 100%;}
+          .bubble{ --tw-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+            --tw-shadow-colored: 0 2px 2px 0 var(--tw-shadow-color), 0 3px 1px -2px var(--tw-shadow-color), 0 1px 5px 0 var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+            --tw-bg-opacity: 1;
+            background-color: #2f3349;
+            background-clip: border-box;
+           
+            border-style: solid;
+            border-radius: 1rem;
+            z-index: 20;
+            padding: 46px 35px;
+            width: 86%;
+           
+            margin: 144px 0px;}
+            .canvabubble{height: 100%;
+              width: 100%;}
+              .users{
+                background-color: #2f3349;
+              }
+.userscontact{background-color: #2f3349;
+width:100%}
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+ padding: 0;
+}
+.react-toggle {
+  touch-action: pan-x;
+
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.react-toggle-screenreader-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.react-toggle--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.25s;
+  transition: opacity 0.25s;
+}
+
+.react-toggle-track {
+  width: 50px;
+  height: 24px;
+  padding: 0;
+  border-radius: 30px;
+  background-color: #4D4D4D;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
+  background-color: #000000;
+}
+
+.react-toggle--checked .react-toggle-track {
+  background-color: #000000;
+}
+
+.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+  background-color: #000000;
+}
+
+.react-toggle-track-check {
+  position: absolute;
+  width: 14px;
+  height: 10px;
+  top: 0px;
+  bottom: 0px;
+  margin-top: auto;
+  margin-bottom: auto;
+  line-height: 0;
+  left: 8px;
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+
+.react-toggle--checked .react-toggle-track-check {
+  opacity: 1;
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+
+.react-toggle-track-x {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 0px;
+  bottom: 0px;
+  margin-top: auto;
+  margin-bottom: auto;
+  line-height: 0;
+  right: 10px;
+  opacity: 1;
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+
+.react-toggle--checked .react-toggle-track-x {
+  opacity: 0;
+}
+
+.react-toggle-thumb {
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #4D4D4D;
+  border-radius: 50%;
+  background-color: #FAFAFA;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.react-toggle--checked .react-toggle-thumb {
+  left: 27px;
+  border-color: #000000;
+}
+
+.react-toggle--focus .react-toggle-thumb {
+  -webkit-box-shadow: 0px 0px 3px 2px #0099E0;
+  -moz-box-shadow: 0px 0px 3px 2px #0099E0;
+  box-shadow: 0px 0px 2px 3px #0099E0;
+}
+
+.react-toggle:active:not(.react-toggle--disabled) .react-toggle-thumb {
+  -webkit-box-shadow: 0px 0px 5px 5px #0099E0;
+  -moz-box-shadow: 0px 0px 5px 5px #0099E0;
+  box-shadow: 0px 0px 5px 5px #0099E0;
+}
+.codeedior {
+  width: 700px;
+  height: 450px;
+  background-color: rgb(11, 11, 11); 
+}
+
+.CodeMirror {
+  border: 1px solid black;
+  background-color: rgb(255, 255, 255);
+  margin: 5px;
+}
