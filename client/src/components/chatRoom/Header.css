@@ -1,0 +1,274 @@
+@font-face {
+  font-family: "Fira Code";
+  src: url("../node_modules/firacode/FiraCode-Regular.ttf") format("truetype");
+}
+.cover_chatroom img {
+    width : 100%;
+
+}
+body, html {
+    margin: 0px;
+    padding: 0px;
+    /* overflow: hidden; */
+    background-color: black;
+}
+h1{
+    margin: 10px;
+    padding: 10px;
+}
+
+.button_wrapper {
+    position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: #b4b094;
+  background-image: url("../../assets/imgs/shape.jpg");
+  animation: animateBackground 20s linear infinite;
+  
+  
+}
+@keyframes animateBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.button_stack {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.button_st {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+#choiceroom {
+  font-family: "Fira Code", monospace;
+}
+#createroom {
+  font-family: "Fira Code", monospace;
+}
+
+.button_st button {
+  height: 40px;
+  width: 100px;
+  background-color: #040001a0;
+  border: 1px solid white;
+  color: white;
+  padding: 12px 24px;
+  /* text-align: center; */
+  /* text-decoration: none; */
+  /* display: inline-block; */
+  font-size: 13px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.button_st button:hover {
+  background-color: #234b8e;
+  cursor: pointer;
+}
+
+.create_room button{
+    height: 40px;
+    width: 100px;
+    background-color: #000000a0;
+    border: 1px solid white;
+    color: white;
+    padding: 12px 24px;
+    /* text-align: center; */
+    /* text-decoration: none; */
+    /* display: inline-block; */
+    font-size: 13px;
+    border-radius: 4px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+.create_room input {
+    height: 36px;
+  width: 350px;
+  background-color: #000000a0;
+  border: 1px solid white;
+  color: white;
+  margin: 10px;
+  /* padding: 12px 24px; */
+  /* text-align: center; */
+  /* text-decoration: none; */
+  /* display: inline-block; */
+  font-size: 13px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.stack_description{
+    height: 300px;
+    width: 500px;
+    background-color: black;
+    /* position: relative; */
+    z-index: 1;
+    bottom: 394px;
+    left: 129px;
+    color: wheat;
+    border-radius: 20px;
+    border:3px solid #234b8e;
+    margin: 20px;
+    opacity: 0.8;
+}
+
+.stack_description p {
+    margin: 20px;
+    font-family: "Fira Code", monospace ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+.img_logo{
+  max-width: 50%;
+  height: auto;
+}
+.img_logo img {
+  max-width: 50%;
+  height: auto;
+  margin-left: 179px;
+    margin-top: 7px;
+}
+
+.new_room {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  margin: 15px;
+  /* gap: 100px; */
+}
+
+.create_room {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  /* position: relative; */
+  
+}
+
+.profil_chat {
+  border: #234b8e;
+  border-radius: 40px;
+  background-color: black;
+  height: 183px;
+  width: 923px;
+  position: absolute;
+  top:15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.7;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+}
+.profil_img{
+  height: auto;
+  max-width: 150px;
+  
+}
+.profil_img img{
+  height: auto;
+  max-width: 150px;
+  margin-left: 30px;
+  border:#234b8e;
+  border-radius: 50px;
+  
+}
+
+.profil_text {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  gap: 200px;
+}
+
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: flex-start;
+}
+
+.chat-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  align-items: flex-start;
+}
+
+.message {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.message-body {
+  background-color: #1413113b;
+    border-radius: 20px;
+    padding: 10px;
+    max-width: 100%;
+    text-align: left;
+    width: 1131px;
+}
+
+.text_message {
+  margin-left: 50px;
+  font-size: 16px;
+  color: #ffffff;
+  font-family: "Fira Code", monospace;
+}
+
+.user-info img{
+  width: 50px;
+  height: auto;
+}
+
+
+.wrapper_ofal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+}
+
+.canvas__full {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.chatRoom__Name{
+  position: absolute;
+  /* color: white; */
+  left: 45%;
+  z-index: 5;
+  top: 13%;
+  font-size: 37px;
+  font-family: 'Fira Code', monospace;
+  font-weight: bolder;
+  color: rgba(0, 0, 0, 0.687);
+  font-variant-caps: petite-caps;
+}
